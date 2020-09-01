@@ -1,0 +1,7 @@
+%@ Subject: Elementary Statistical Inference
+
+\question[15] El di\'ametro de los agujeros para una montura de cable sigue una distribuci\'on normal con desviaci\'on est\'andar de 0,01 [pulgadas]. Para analizar el nivel de precisi\'on de dichos agujeros, se obtiene una muestra aleatoria de 10 monturas, obteniendo un di\'ametro promedio de 1,5045 [pulgadas].\noaddpoints\begin{parts}\part[7] Construya un intervalo de confianza para el di\'ametro promedio verdadero de los agujeros. Considere un nivel de confianza del 95\%.\part[8] El fabricante afirma que el di\'ametro promedio verdadero de los agujeros es de 1,5 [pulgadas]. ?`La evidencia muestral permite refutar lo dicho por el fabricante? Considere un nivel de significancia de 0,01.\end{parts}
+
+\begin{solution}
+Sea $X:\{$ di\'ametro de los agujeros para una montura de cable$\}$$$X\sim N(\mu,0.01^2) $$El intervalo de confianza pedido est\'a dado por:$$IC_{95\%}(\mu)=\left[ \overline{x} \mp \dfrac{\sigma}{\sqrt{n}} Z_{1-\alpha/2} \right]$$Reemplazando con los datos del enunciado, se tiene:\begin{align*}&\left[ 1.5045 \mp \dfrac{0.01}{\sqrt{10}}Z_{0.975}\right]=  \left[ 1.498306 ; 1.510694\right] \end{align*}La prueba de hip\'otesis a realizar es: $(\alpha=0.01)$\begin{align*}H_0: \mu=1.5 \\H_1: \mu \neq 1.5\end{align*}Nuestro estad\'istico de prueba es $Z=\dfrac{1.5045-1.5}{0.01/\sqrt{10}}=1.42305$.Rechazamos $H_0$ si:$$ Z \leq Z_{\alpha/2}=-2.575 \text{ \'o } Z \geq Z_{1-\alpha/2}=2.575 $$Luego, como $Z\in [-2.575,2.575]$, no rechazamos $H_0$.
+\end{solution}

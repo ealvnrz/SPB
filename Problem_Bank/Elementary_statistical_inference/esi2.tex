@@ -1,0 +1,7 @@
+%@ Subject: Elementary Statistical Inference
+
+\question[10] Una caja contiene bolas de color rojo y blanco en proporciones desconocidas. Se obtuvo una muestra aleatoria con reemplazo de 60 bolas desde la caja, en la cual el $70\%$ fueron de color rojo. Construya un intervalo de confianza del $95\%$ y $99\%$ para la proporci\'on real de bolas de color rojo.
+
+\begin{solution}
+Los intervalos pedidos tienen la forma:$$IC(p)_{(1-\alpha)100\%}=\left[ \hat{p}\pm Z_{1-\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}\right]$$Luego, reemplazando con los datos entregados, se tiene que:$$IC(p)_{(1-\alpha)100\%}=\left[0.7\pm Z_{1-\alpha/2}\sqrt{\dfrac{0.7(1-0.7)}{60}}\right]$$en donde $\alpha=0.05$ y $\alpha=0.01$, respectivamente. As\'i, los cuantiles a utilizar ser\'an 1.96 y 2.575. Finalmente, reemplazando en la expresi\'on anterior, los intervalos pedidos est\'an dados por:$$IC(p)_{95\%}=\left[0.5840448;0.8159552\right]$$y,$$IC(p)_{99\%}=\left[0.5476609;0.8523391\right]$$
+\end{solution}

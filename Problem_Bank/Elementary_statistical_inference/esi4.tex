@@ -1,0 +1,7 @@
+%@ Subject: Elementary Statistical Inference
+
+\question[5] Sean $X\sim Bin(n,\theta)$ y $Y_i \sim Bernoulli(\theta)$ para $i=1,\dots,n$ variables aleatorias independientes. Es sabido que $X=\sum_{i=1}^{n} Y_i$. Muestre que $\hat{\theta}=\dfrac{X}{n}$ es un estimador insesgado. 
+
+\begin{solution}
+Es claro ver que $\mathbb{E}\left[\dfrac{X}{n}\right]=\dfrac{1}{n}\mathbb{E}\left[X\right]=\dfrac{1}{n}\displaystyle \sum_{i=1}^{n}\mathbb{E}[Y]=\dfrac{n\theta}{n}=\theta$
+\end{solution}

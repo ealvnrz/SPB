@@ -1,0 +1,8 @@
+%@ Subject: Elementary Statistical Inference
+
+\question[15] En el pasado, la desviaci\'on est\'andar del peso de cierto tipo de cajas fue de 7 gramos. Una muestra aleatoria de 20 cajas mostr\'o una desviaci\'on est\'andar de 9 gramos. El encargado de control de calidad de la empresa que produce este tipo de cajas, sospecha que la varianza del peso ha aumentado significativamente. ?`Existe evidencia estad\'istica suficiente para corroborar esta sospecha con un $95\%$ de confianza?
+
+\begin{solution}
+
+Planteando las hip\'otesis:$$H_0: \sigma^2\leq 49\hspace{25pt} H_1: \sigma^2 > 49 $$El valor de nuestro est\'istico de prueba es: $\chi^2=\dfrac{19*9^2}{7^2}\approx 31.4$. Rechazaremos nuestra hip\'otesis nula si $\chi^2\geq \chi_{1-\alpha,n-1}^{2}$, en donde utilizando $\alpha=0.05$ nuestro cuantil estar\'a dado por $30.14$. As\'i, dado que $\chi^2 \geq 30.14$. Rechazamos nuestra hip\'otesis nula, y podemos afirmar con un $95\%$ de confianza que la varianza del peso de las cajas ha aumentado.
+\end{solution}
