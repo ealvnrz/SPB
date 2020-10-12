@@ -1,0 +1,20 @@
+%@ Subject: Elementary Probability
+\addpoints
+\question[10] 
+Una caja contiene 8 bolas rojas, 3 blancas y 9 azules. Si se extraen 3 bolas aleatoriamente sin reemplazo, determinar la probabilidad de que:
+\noaddpoints
+\begin{parts}
+\part[2] Las 3 bolas sean rojas.                                 
+\part[2] Al menos 1 sea blanca.                                  
+\part[3] Se extraiga una de cada color.      
+\part[3] Las bolas sean extraídas en el orden rojo, blanco, azul.                    
+\end{parts}
+
+\begin{solution}
+\begin{enumerate}[a)]
+\item \textbf{(2 pts)} $\displaystyle \mathbb{P}(\text{Las 3 bolas sean rojas})=\dfrac{C_{3}^{8}}{C_{3}^{20}}=\dfrac{14}{285}\approx 0.0491$
+\item \textbf{(2 pts)} $\mathbb{P}(\text{ninguna blanca})=\dfrac{C_{3}^{17}}{C_{3}^{20}}=\dfrac{34}{57}$. Así, $\mathbb{P}(\text{al menos 1 blanca})=1-\dfrac{34}{57}=\dfrac{23}{57}\approx 0.4035$
+\item \textbf{(3 pts)} $\mathbb{P}(\text{1 de cada color})=\dfrac{C_{1}^{8} C_{1}^{3} C_{1}^{9}}{C_{3}^{20}}=\dfrac{18}{95}\approx 0.1894$
+\item \textbf{(3 pts)} $\mathbb{P}(\text{extraer las bolas en orden rojo, blanco, azul})=\dfrac{1}{3!}\mathbb{P}(\text{1 de cada color})=\dfrac{1}{6}\left( \dfrac{18}{95}\right)=\dfrac{3}{95}\approx 0.031572$
+\end{enumerate}
+\end{solution}
