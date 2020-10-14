@@ -1,0 +1,63 @@
+%@ Subject: Sampling Theory
+
+\addpoints
+
+\question[60] Un estudio para evaluar las actitudes de los contadores hacia sus servicios de publicidad incluía enviar cuestionarios a 200 contadores seleccionados desde una lista de 1400 nombres. Un total de 82 cuestionarios fueran respondidos. El resumen de los datos obtenidos se expresan en la siguiente tabla:\\
+
+
+
+
+\begin{table}[h!]
+\textbf{Probabilidad de publicitar en el futuro (\%)}
+\centering
+\begin{tabular}{lcc}
+\hline
+                   & Cuestionarios respondidos (82) & Quienes han publicitado en el pasado (46) \\ \hline
+Casi seguro que sí & 22                        & 35                                            \\
+Muy probablemente  & 4                         & 5                                             \\
+Probablemente sí   & 19                        & 35                                            \\
+50-50              & 18                        & 15                                            \\
+Probablemente no   & 6                         & 10                                            \\
+Muy poco probable  & 12                        & 0                                             \\
+Absolutamente no   & 15                        & 0                                             \\
+Sin respuesta      & 4                         & 0                                             \\ \hline
+\end{tabular}
+\caption{Fuente: \textit{Traynor, K. 1984. Accounting Advertising: Perceptions, Attitudes and Behaviors, Journal of Advertising Research, 23(6): 35–40. Copyright ©1984 by the Advertising Research Foundation.}}
+\end{table}
+
+\noaddpoints
+\vspace{10pt}
+\begin{parts}
+
+\part[15] Estime la proporción poblacional de quienes están \textit{casi seguro que si} de publicitar en el futuro y obtenga una cota para el error de estimación.
+
+\part[15] Estime la proporción poblacional de quienes tienen \textbf{al menos} una probablidad \textit{50-50} de publicitar y obtenga una cota para el error de estimación.
+
+\part[15] Dentro de quienes han publicitado en el pasado, estime la proporción poblacional de quienes \textit{probablemente no} publicitarán en el futuro y obtenga una cota para el error de estimación.
+
+\part[15] Dentro de quienes han publicitado en el pasado, estime la proporción poblacional de quienes tienen \textbf{al menos} una probablidad \textit{50-50} de publicitar en el futuro y obtenga una cota para el error de estimación.
+
+\end{parts}
+
+\begin{solution}
+
+\begin{enumerate}[a)]
+\item Por tabla sabemos que: $\hat{p}=0.22$, luego podemos obtener una cota superior para el error de estimación usando la fórmula:
+$$2*\sqrt{\left(1-\dfrac{n}{N}\right)\dfrac{\hat{p}(1-\hat{p})}{n-1}}\leq d$$
+Luego, reemplazando con los datos del problema se tiene que:
+$$2*\sqrt{\left( 1-\dfrac{82}{1400}\right)\dfrac{0.22*0.78}{81}}=0.0893$$
+Así, un cota superior para el error de estimación es 0.0893.
+\item Por tabla sabemos que quienes tienen al menos un probabilidad 50-50 de publicitar son quienes respondieron: \textbf{Casi seguro que si, muy probablemente, probablemente sí y 50-50}. Por lo que la estimacional puntual de la proporción pedida está dada por:
+$$\hat{p}=0.18+0.19+0.04+0.22=0.63$$
+Luego, utilizando la misma fórmula anterior obtenemos la cota superior para el error de estimación como
+$$2*\sqrt{\left( 1-\dfrac{82}{1400}\right)\dfrac{0.63*0.37}{81}}=0.1041$$
+\item Por tabla sabemos que:  $\hat{p}=0.1$, luego utilizando la misma fórmula anterior obtenemos la cota superior para el error de estimación como:
+$$2*\sqrt{\left( 1-\dfrac{45}{1400}\right)\dfrac{0.1*0.9}{45}}=0.088$$
+\item Por tabla sabemos que quienes tienen al menos un probabilidad 50-50 de publicitar son quienes respondieron: \textbf{Casi seguro que si, muy probablemente, probablemente sí y 50-50}. Por lo que la estimacional puntual de la proporción pedida está dada por:
+$$\hat{p}=0.35+0.05+0.35+0.15=0.9$$
+Luego, utilizando la misma fórmula anterior obtenemos la cota superior para el error de estimación como
+$$2*\sqrt{\left( 1-\dfrac{45}{1400}\right)\dfrac{0.9*0.1}{45}}=0.088$$
+
+\end{enumerate}
+
+\end{solution}
