@@ -1,0 +1,25 @@
+%@ Subject: Sampling Theory
+
+\addpoints
+\question[15] Una muestra aleatoria simple de tamaño 3 fue obtenida desde una población de tamaño $N$ \textbf{con reemplazo}. Como estimador de la media poblacional utilizaremos $\overline{y}$, la media no ponderada sobre las diferentes unidades en la muestra. Muestre que la varianza promedio de $\overline{y}$ es: 
+$$\dfrac{(2N-1)(N-1)}{6N^2}s_{y}^{2}$$
+\textit{Ayuda:} Notar que la muestra obtenida puede contener 1,2 o 3 unidades diferentes.
+\begin{solution}
+Sean $P_1,P_2$ y $P_3$ las probabilidades de que la muestra contenga 1,2 y 3 unidades diferentes, respectivamente. Entonces:
+
+\begin{align*}
+P_1 &= \sum_{r=1}^{N} \mathbb{P}( \text{Seleccionar la r-ésima unidad en las 3 selecciones} )\\
+ &=N\dfrac{1}{N} \dfrac{1}{N} \dfrac{1}{N}=\dfrac{1}{N^2}\\
+P_2 &= \sum_{r=1}^{N} \mathbb{P}( \{\text{r-ésima,otra,otra}\})+\sum_{r=1}^{N} \mathbb{P}( \{\text{otra,r-ésima,otra}\}) +  \sum_{r=1}^{N} \mathbb{P}( \{\text{otra,otra,r-ésima}\})\\
+&= N \dfrac{1}{N}\dfrac{N-1}{N}\dfrac{N-1}{N}+ N \dfrac{1}{N}\dfrac{N-1}{N}\dfrac{N-1}{N} + N \dfrac{1}{N}\dfrac{N-1}{N}\dfrac{N-1}{N}\\
+&= \dfrac{3(N-1)}{N^2}\\
+P_3 &= \sum_{r=1}^{N}\mathbb{P}(\{\text{r-ésima, otra diferente de la r-ésima, otra diferente a las anteriores}\})\\
+&= \dfrac{N(N-1)(N-2)}{N^3}\\
+&= \dfrac{(N-1)(N-2)}{N^2}
+\end{align*}
+Luego, sabemos que la varianza de un media muestral basada en $n$ unidades diferentes está dada por:
+$$\left(1-\dfrac{n}{N}\right)\dfrac{s_{y}^{2}}{n}=\dfrac{N-n}{Nn}s_{y}^{2}$$
+Así, la varianza promedio estará dada por:
+$$\left(\dfrac{N-1}{N}s_{y}^{2}\right)\dfrac{1}{N^2}+\left(\dfrac{N-2}{2N}s_{y}^{2}\right)\dfrac{3(N-1)}{N^2}+\left(\dfrac{N-3}{3N}s_{y}^{2}\right)\dfrac{(N-1)(N-2)}{N^3}=\dfrac{(2N-1)(N-1)}{6N^2}s_{y}^{2}$$
+
+\end{solution}

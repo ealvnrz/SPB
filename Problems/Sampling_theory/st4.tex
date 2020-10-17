@@ -1,0 +1,9 @@
+%@ Subject: Sampling Theory
+
+\addpoints 
+\question[15] La gerencia de una empresa de servicios públicos está interesada en la cantidad media de tiempo vencido de las facturas con pagos atrasados. Para ello se extraerá una muestra sistemática de una lista alfabética de 2500 cuentas de clientes morosos. En una encuesta similar realizada el año anterior, se encontró que la varianza muestra era de 100 días. Determine el tamaño muestral requerido para estimar la característica de interés, la cantidad media de tiempo que las facturas de servicios públicos están vencidad (sin pago), tal que el error de estimación sea a lo más 2 días. ¿Debe asumir algo para obtener este valor?
+
+\begin{solution}
+Un supuesto razonable es que la población es aleatoria, por lo que $\rho\approx 0$. Así, el tamaño de muestra pedido estará dado por:
+$$n=\dfrac{Ns^2}{(N-1)d^2/4+s^2}=\dfrac{2500*100}{2499*1+100}=96.19\approx 97$$
+\end{solution}
