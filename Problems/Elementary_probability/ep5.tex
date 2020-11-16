@@ -1,0 +1,20 @@
+%@ Subject: Elementary Probability
+
+\addpoints
+\question[20]
+El departamento de educación física, deportes y recreación de la Universidad de Valparaíso está interesado en saber la condición física de los estudiantes de la universidad, por lo que cada 3 años realiza un estudio del peso de los estudiantes. Se sabe que los pesos de los estudiantes de la UV se distribuyen de forma normal con media $70$ kg y desviación típica $6$ kg. 
+\noaddpoints
+\begin{parts}
+\part[2] Defina la variable aleatoria en estudio.
+\part[10] ¿Qué porcentaje de alumnos tiene un peso mayor a $77,6$ kg?
+\part[13] Con el fin de promover la actividad deportiva dentro de la universidad, la \textbf{DIDER} ofrecerá un curso de acondicionamiento físico de forma gratuita con un cupo máximo de 30 personas. ¿Cuál es la probabilidad que más de 5 personas con peso mayor a $77,6$ kg asistan al curso?. Asuma que todos los cupos del curso fueron solicitados.
+\end{parts}
+
+\begin{solution}
+\begin{enumerate}[a)]
+\item $X:\{$ Peso de los estudiantes de la Universidad de Valparaíso en kg$\}$. $X\sim N(70,6^2)$
+\item $\mathbb{P}(X>77.6)=1-\mathbb{P}(X\leq 77.6)=1-\mathbb{P}(Z < 1.267)\approx 1-0.89742 \approx 0.1025$ 
+\item $Y:\{$ Número de personas con peso mayor a 77,6 kg de 30 personas $\}$. $Y\sim Bin(30,0.1025)$\\
+$\mathbb{P}(Y>5)=1-\mathbb{P}(Y\leq 5)\approx 1-0.9268 \approx  0.0732$
+\end{enumerate}
+\end{solution}

@@ -24,7 +24,7 @@ El dentista B, utilizando las mismas técnicas dentales y los resultados obtenid
 Para el dentista A, la estimación del número total de dientes con caries es:
 $$\hat{\tau}=N\overline{x}=200*\dfrac{0*8+1*4+\cdots+10*1}{20}=200*2.1=420$$
 y el error de estimación estará dado por:
-$$\sqrt{\widehat{\mathbb{V}(\hat{\tau})}}=\sqrt{N^2\left(1-\dfrac{n}{N}\right)\dfrac{\hat{s}^2}{N}}=\sqrt{200^2\left(1-\dfrac{20}{200}\right)\dfrac{8.62}{20}}=123.04$$
+$$2*\sqrt{\widehat{\mathbb{V}(\hat{\tau})}}=2*\sqrt{N^2\left(1-\dfrac{n}{N}\right)\dfrac{\hat{s}^2}{N}}=2*\sqrt{200^2\left(1-\dfrac{20}{200}\right)\dfrac{8.62}{20}}=2*123.04$$
 Para el dentista B, se considera la subpoblación restante de 140 niños con caries, tras eliminar del total inicial los 60 que no tenian caries. En cuanto a la muestra, hay que eliminar de la distribución inicial a los ocho niños que tienen cero caries (20-8=12). La distribución muestral de frecuencia de esta subpoblación restante está dada por:
 
 
@@ -40,7 +40,7 @@ Por lo que se tiene que $N_1=140$ y $n_1=12$, luego:
 
 $$\hat{\tau_1}=N_1\overline{x_1}=140*\dfrac{1*4+\cdots+10*1}{12}=149*3.5=490$$
 y error de estimación estará dado por:
-$$\sqrt{\widehat{\mathbb{V}(\hat{\tau_1})}}=\sqrt{N_{1}^{2}\left(1-\dfrac{n_1}{N_1}\right)\dfrac{\hat{s_1}^2}{N_1}}=\sqrt{140^2\left(1-\dfrac{12}{140}\right)\dfrac{9.545}{12}}=419.370$$
+$$2*\sqrt{\widehat{\mathbb{V}(\hat{\tau_1})}}=2*\sqrt{N_{1}^{2}\left(1-\dfrac{n_1}{N_1}\right)\dfrac{\hat{s_1}^2}{N_1}}=2*\sqrt{140^2\left(1-\dfrac{12}{140}\right)\dfrac{9.545}{12}}=2*419.370$$
 
 Finalmente, los intervalos de confianza pedidos están dados por:
 $$IC(\tau)=\hat{\tau}\pm z_{1-\alpha/2} \sqrt{\widehat{\mathbb{V}(\hat{\tau})}}$$

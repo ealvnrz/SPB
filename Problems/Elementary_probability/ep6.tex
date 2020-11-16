@@ -1,0 +1,51 @@
+%@ Subject: Elementary Probability
+
+\addpoints
+\question[15] Considere dos variables aleatoria $X,Y$ con distribución de masa de probabilidad conjunta dada por:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+
+\hline 
+ & $Y=2$ & $Y=4$ & $Y=5$ \\ 
+\hline 
+$X=1$ & $1/12$ & $1/24$ & $1/24$ \\ 
+\hline 
+$X=2$ & $1/6$ & $1/12$ & $1/8$ \\ 
+\hline 
+$X=3$ & $1/4$ & $1/8$ & $1/12$ \\ 
+\hline 
+\end{tabular} 
+\end{center}
+\noaddpoints
+\begin{parts}
+\part[5] Calcule $\mathbb{P}(X \leq 2 , Y\leq 4)$
+\part[5] Encuentre la función de cuantía marginal $P_{X}(x)$.
+\part[5] Calcule $\mathbb{P}(Y=2|X=1)$
+\end{parts}
+
+\begin{solution}
+ \begin{enumerate}[a)]
+\item \begin{align*}
+\mathbb{P}(X \leq 2, Y \leq 4) &=P_{XY}(1,2)+ P_{XY}(1,4)+P_{XY}(2,2)+ P_{XY}(2,4)\\
+&=\frac{1}{12}+\frac{1}{24}+\frac{1}{6}+\frac{1}{12}=\frac{3}{8}.
+\end{align*}
+\item \begin{equation}
+ \nonumber P_X(x) = \left\{
+  \begin{array}{l l}
+     \frac{1}{6} &  \quad x=1  \\
+      &  \quad   \\
+     \frac{3}{8} &  \quad x=2  \\
+      &  \quad   \\
+      \frac{11}{24} &  \quad x=3  \\
+      &  \quad   \\
+    0 &  \quad \text{e.o.c}
+  \end{array} \right.
+\end{equation}
+\item \begin{align}%\label{}
+       \nonumber P(Y=2 | X=1)&=\frac{P(X=1, Y=2)}{P(X=1)}\\
+       \nonumber &=\frac{P_{XY}(1,2)}{P_X(1)}\\
+       \nonumber &=\frac{\frac{1}{12}}{\frac{1}{6}}=\frac{1}{2}.
+     \end{align}
+\end{enumerate}
+\end{solution}
