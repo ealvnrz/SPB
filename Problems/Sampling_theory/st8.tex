@@ -1,0 +1,16 @@
+%@ Subject: Sampling Theory
+
+\addpoints
+
+\question[15] Una empresa publicitaria está iniciando una campaña de promoción para un nuevo producto. La empresa quiere muestrear clientes potenciales en una pequeña comunidad para determinar la aceptación del producto. Para eliminar parte de los costos asociados con las entrevistas personales, el investigador decide seleccionar una muestra sistemática de entre $5000$ nombres listados en un registro de la comunidad y recolectar los datos mediante entrevistas telefónicas.
+
+\noaddpoints
+\begin{parts}
+\part[15] Determinar el tamaño de muestra requerido para estimar la proporción de personas que consideran \textit{aceptable} el producto, con un límite para el error de estimación de $0.03$. 
+\end{parts}
+
+\begin{solution}
+Utilizando la fórmula para tamaño de muestra para un M.A.S. (asumimos que el error del muestreo sistemático puede ser aproximado de buena manera por el el error del M.A.S) dada por:
+$$n=\dfrac{N(1-p)}{(N-1)(d^2/z^2)+p(p-1)}$$
+Tras reemplazar con los valores dados y una proporción $p=0.5$, se obtiene $n\approx 910$.
+\end{solution}

@@ -1,0 +1,28 @@
+%@ Subject: Sampling Theory
+
+\addpoints
+
+\question[20] En una feria artesanal de Valparaíso se desea estimar la cantidad $X$ gastada por visitantes europeos en sus puestos de venta. Para ello, de entre los $500$ visitantes en un día determinado, se seleccionó una muestra aleatoria simple de tamaño $100$ y a la salida de la feria artesanal se les preguntó la cantidad de dinero (en euros) que habían gastado. Se obtuvieron los siguientes datos:
+
+$$\sum_{i=1}^{100} X_i =250 \hspace{30pt} \sum_{i=1}^{100} X_{i}^{2} = 649,75$$
+
+\noaddpoints
+\begin{parts}
+\part[7] Hallar un intervalo de confianza al $95\%$ para la cantidad media gastada por persona en la feria artesanal.
+
+\part[7] ¿A cuántas personas se debería haber preguntado para que, con la misma confianza, el error de estimación anterior no supere los $75$ euros?
+
+\part[6] ¿Cuántas personas deberían haber sido preguntadas si se hubiera deseado estimar la proporción de personas insatisfechas con los artículos disponibles para la venta en la feria artesanal, con un error del $10\%$ y una confianza del $95\%$?
+\end{parts}
+\begin{solution}
+Utilizando la fórmula para el intervalo de confianza dada por:
+$$I=\left[ \overline{y} \pm z_{1-\alpha/2} \sqrt{ \left( 1-\dfrac{n}{N} \right) \dfrac{s^2}{n}} \right]$$
+De lo que se obtiene: $I=\left[ 2,4123 ; 2,5876 \right]$.\\
+
+Utilizando la fórmula para el tamaño de muestra bajo un M.A.S. dada por:
+$$n=\dfrac{1}{\dfrac{1}{n_0} + \dfrac{1}{N}}$$
+en donde $n_0=\dfrac{z^2\sigma^2}{d^2}$. Reemplazando con los datos, se obtiene $n\approx 128$.\\
+Como no se tiene información sobre la proporción real, se utiliza $p=0.5$. Luego utilizando la fórmula para determinación de tamaño de muestra dada por:
+$$n=\dfrac{Np(p-1)}{(N-1)\dfrac{d^2}{z^2}+p(1-p)}$$
+Luego, reemplazando con los datos se obtiene $n\approx 81$.
+\end{solution}

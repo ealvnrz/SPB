@@ -1,0 +1,50 @@
+%@ Subject: Sampling Theory
+\addpoints
+\question[20] Los auditores frecuentemente están interesados en comparar el valor intervenido de los artículos con el valor establecido en los libros. Generalmente, los valores en los libros son conocidos para cada artículo en la población, y los valores intervenidos son obtenidos con una muestra de esos artículos. Los Valores en el libro entonces pueden utilizarse para obtener una buena estimación del valor intervenido total o promedio para la población.\\
+
+Una población contiene $180$ artículos inventariados con un valor establecido en el libro de $\$13,320$ UM. Denotamos $y_i$ el valor en el libro y por $x_i$ el valor intervenido del $i-$ésimo artículo. Una muestra irrestricta aleatoria de $n=10$ artículos produce los resultados que se muestran en la tabla adjunta.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+Muestra & \begin{tabular}[c]{@{}c@{}}Valor Intervenido\\ $x_i$\end{tabular} & \begin{tabular}[c]{@{}c@{}}Valor en libro\\ $y_i$\end{tabular} & $d_i$ \\ \hline
+1       & 9                                                                 & 10                                                             & -1   \\ \hline
+2       & 14                                                                & 12                                                             & 2    \\ \hline
+3       & 7                                                                 & 8                                                              & -1   \\ \hline
+4       & 29                                                                & 26                                                             & 3    \\ \hline
+5       & 45                                                                & 47                                                             & -2   \\ \hline
+6       & 109                                                               & 112                                                            & -3   \\ \hline
+7       & 40                                                                & 36                                                             & 4    \\ \hline
+8       & 238                                                               & 240                                                            & -2   \\ \hline
+9       & 60                                                                & 59                                                             & 1    \\ \hline
+10      & 170                                                               & 167                                                            & 3    \\ \hline
+\end{tabular}
+\end{table}
+
+\noaddpoints
+\begin{parts}
+\part[5] Estimar el valor intervenido medio por el método indirecto de diferencia y su error de estimación.
+\part[10] Realizar las mismas estimaciones anteriores por el método de regresión y razón.
+\part[5] ¿Qué estimador es el más adecuado? Justifique.
+\end{enumerate}
+\end{parts}
+\begin{solution}
+La estimación por diferencia está dado por: 
+$$\hat{\overline{X}}=\overline{x}-\overline{y}+\overline{Y}=(72.1-71.7)+74=74.4$$
+y su estimación de la varianza viene dada por:
+$$\widehat{\mathbb{V}(\hat{\overline{X}})}=\dfrac{1-f}{n}(\hat{S_{x}^{2}}+\hat{S_{y}^{2}}-2\hat{S_{xy}}  )=0.59$$
+
+La estimación por regresión está dada por:
+$$\overline{x_{rg}}=\overline{x}-b_0(\overline{Y}-\overline{y})=72.1+0.99(74-71.7)=74.38$$
+en donde, $\hat{b_0}=0.99$. Su varianza mínima estará dada por:
+$$\widehat{\mathbb{V}_{min}(\overline{x_{rg}})}=\dfrac{1-f}{n}\hat{S_{x}^{2}}(1-\hat{\rho^2})=0.56$$
+La estimación por razón está dada por:
+$$\hat{\overline{X_R}}=\dfrac{\overline{x}}{\overline{y}}\overline{Y}=\dfrac{721}{717}74=74.41$$
+y su varianza puede estimarse como:
+$$\widehat{\mathbb{V}(\hat{\overline{X_R}})}=\dfrac{1-f}{n}(\hat{S_{x}^{2}}+\hat{R^2}\hat{S_{y}^{2}}-2\hat{R}\hat{S_{xy}}  )=0.66$$
+
+Las estimaciones puntuales son bastante cercanas, por lo que nos quedamos con el método de estimación que nos entrega menor varianza, esto es, la estimación por regresión.
+
+\end{solution}
+

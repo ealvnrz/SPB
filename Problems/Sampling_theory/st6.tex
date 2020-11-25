@@ -1,0 +1,30 @@
+%@ Subject: Sampling Theory
+
+\addpoints
+\question[15] Bajo un muestreo aleatorio simple sin reposición. Considere $z_i$ una variable aleatoria Bernoulli, tal que $z_i=1$ si la unidad $i$ de la población es incluida en la muestra y $z_i=0$ en caso contrario. Por lo que:
+$$\overline{y}=\dfrac{1}{n}\sum_{i=1}^{N}y_i z_i$$
+
+\noaddpoints
+\begin{parts}
+\part[7] Calcule $\mathbb{E}(\overline{y})$ \\
+\textit{Ayuda:} Considere 
+$$\mathbb{V}(\overline{y})=\mathbb{V}\left(\dfrac{1}{n}\sum_{i=1}^{N}y_i z_i \right)=\dfrac{1}{n^2}\left[\sum_{i=1}^{N} y_{i}^{2} \mathbb{V}(z_i) + \sum_{i}^{N} \sum_{i\neq j} y_i y_j cov(z_i,z_j)\right]$$
+\part[5] Calcule $\mathbb{E}(z_iz_j)$ y utilice esto para calcular $cov(z_i,z_j)$
+
+\part[3] Finalmente, considerando la siguiente identidad:
+$$\sum_{i=1}^{N} (y_i - \mu)^2=\sum_{i=1}^{N} y_{i}^{2} - \dfrac{(\sum y_i)^2}{N}= \dfrac{1}{N} \left[ (N-1) \sum_{i=1}^{N} y_{i}^{2} - \sum_{i=1}^{N} \sum_{j\neq i} y_i y_j \right]$$
+Muestre que $\mathbb{V}(\overline{y})=\left(1-\dfrac{n}{N}\right)\dfrac{\sigma^2}{n}$
+\end{parts}
+
+\begin{solution}
+ Ya que $z_i$ es una variable aleatoria Bernoulli, su valor esperado es $\mathbb{P}(z_i = 1)=n/N$. Así,
+$$\mathbb{E}(\overline{y})=\dfrac{1}{n} \sum_{i=1}^{N} y_i\mathbb{E}(z_i)=\dfrac{1}{n}\sum_{i=1}^{N} y_i \dfrac{n}{N}= \dfrac{1}{N} \sum_{i=1}^{N} y_i = \mu$$
+De igual manera, como $z_i$ es una variable aleatoria Bernoulli, su varianza está dada por: $$\mathbb{V}(z_i)=(n/N)(1-n/N).$$ El número de muestras que contienen ambas unidades $i$ y $j$, cuando $i\neq j$ es ${N-2}\choose{n-2}$, por lo que la probabilidad que ambas unidades estén incluidas es: 
+$$\dfrac{{{N-2}\choose{n-2}}}{{{N}\choose{n}}}=\dfrac{n(n-1)}{N(N-1)}$$
+Así, el producto $z_iz_j$ será cero excepto en el caso en que ambas unidades $i$ y $j$ estén incluidas en la muestra, por lo que:
+$$\mathbb{E}(z_iz_j)=\mathbb{P}(z_i=1,z_j=1)=\dfrac{n(n-1)}{N(N-1)}$$
+Luego, 
+$$cov(z_i,z_j)=\mathbb{E}(z_iz_j)-\mathbb{E}(z_i)\mathbb{E}(z_j)=\dfrac{n(n-1)}{N(N-1)}- \left(\dfrac{n}{N} \right)^2=\dfrac{-n(1-n/N)}{N(N-1)}$$
+Considerando la expresión dada para $\mathbb{V}(\overline{y})$, reemplazando los términos $\mathbb{V}(z_i)$ y $cov(z_i,z_j)$ y utilizando la identidad apropiadamente, lo anterior puede ser expresado de la forma:
+$$\mathbb{V}(\overline{y})=\dfrac{1}{n}\left(1-\dfrac{n}{N}\right)\dfrac{\sum (y_i -\mu)^2}{N-1}=\left(1-\dfrac{n}{N}\right) \dfrac{\sigma^2}{n}$$
+\end{solution}

@@ -1,0 +1,31 @@
+%@ Subject: Sampling Theory
+
+\addpoints
+
+\question[20] En cierta ciudad con un millón de hogares es de particular interés medir el ingreso promedio por hogar, para ello se condujo un estudio que contó con un tamaño de muestra de 400 viviendas, utilizando un muestreo aleatorio simple sin reemplazo. Denotando \textit{Edad del jefe de hogar} por $x$ e \textit{Ingreso por hogar} como $y$, los resultados del estudio pueden ser resumidos en:
+$$\hat{\overline{X}}=40 \hspace{20pt} \hat{\overline{Y}}=150 \hspace{20pt} s_{x}^{2}=100  \hspace{20pt} s_{y}^{2}=900  \hspace{20pt} s_{xy}=150$$
+Además, del censo pasado se sabe que la edad promedio de los habitantes de la ciudad es de $\overline{X}=38$
+
+\noaddpoints
+
+\begin{parts}
+\part[10] Estime el ingreso promedio por hogar mediante un estimador de razón y diferencia, y sus respectivas varianzas.
+\part[10] Cuantifique porcentualmente la variación en precisión al utilizar las estimaciones inderectas obtenidas con respecto a la estimación directa usada bajo un muestreo aleatorio simple.
+\end{parts}
+
+\begin{solution}
+Por definición se tiene que:
+$$\hat{\overline{Y}}_{Raz\'on}=\dfrac{150}{40}*38=142.5$$
+y
+$$\hat{\overline{Y}}_{D}=150-40+38=148$$
+En donde sus varianzas son:
+$$\widehat{\mathbb{V}(\hat{\overline{Y}}_{D})}\approx 1.7493$$
+y
+$$\widehat{\mathbb{V}(\hat{\overline{Y}}_{Raz\'on})}\approx 2.9519$$
+,respectivamente. Luego, como base tendremos la estimación directa dada por:
+$$\hat{\overline{Y}}=150$$
+y su varianza asociada:
+$$\mathbb{V}(\hat{\overline{Y}})=\left(\dfrac{1000000-400}{1000000}\right)*\dfrac{900}{400}=2.2491$$
+Así, las variaciones porcentuales en precisión son $-33.\overline{3}\%$ y $+31.24\%$, para los estimadores de diferencia y razón, respectivamente.
+
+\end{solution}

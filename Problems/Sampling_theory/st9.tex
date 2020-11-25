@@ -1,0 +1,20 @@
+%@ Subject: Sampling Theory
+\addpoints
+\question[10] De los $750$ trabajadores de una fábrica, se conoce que el número medio de días anuales de ausencia del trabajo sin justificar para las mujeres (variable $X$) es $10$ y para los hombres (variable $Y$) es $8$. Se sabe que el error cometido al cuantificar la media de la variable $X$ es $2500$ y que la razón de la covarianza de $X$ e $Y$ a la varianza de $X$ es $0.6$.
+\noaddpoints
+\begin{parts}
+\part[5] Determinar a partir de qué tamaño muestral el sesgo del estimador de la razón de $X/Y$ es \textbf{despreciable} utilizando un muestreo sin reposición.
+\part[5] ¿Qué método de estimación indirecta sería el más adecuado a utilizar sobre muestras de esta población? Justique.
+\end{parts}
+
+\begin{solution}
+Por enunciado del problema se tiene:
+$$\overline{X}=10,\quad \overline{Y}=8,\quad \sigma_{x}^{2}=2500,\quad \dfrac{\sigma_{xy}}{\sigma_{x}^{2}}=0.6$$
+De la condición de que el sesgo relativo $|\dfrac{B(\hat{R})}{\sigma(\hat{R})}|$ sea mejor que un décimo se tiene que:
+$$n \geq \dfrac{N\cdot 100 \cdot S_{x}^2}{N\overline{X}^2+100 S_{x}^2}=577$$
+ En caso de muestreo con reposición la misma condición de sesgo relativo menor que un décimo nos lleva a $n\geq 2500$, que sobrepasa el tamaño poblacional (por lo que no podría haber sesgo despreciable).\\
+
+La recta de regresión de $Y$ sobre $X$ tiene ecuación $y-\overline{y}=\dfrac{\hat{S}_{xy}}{\hat{S}_{x}^2}(x-\overline{x}) \Rightarrow y-8=0.6(x-10) \Rightarrow y=0.6x+2$, lo que indica que la estimación por razón podría ser adecuada al no ser demasiado grande la ordenada en el origen. La estimación por regresión siempre es el método más adecuado. La pendiente de la recta no es unitaria, con lo que no es muy apropiada la estimación por diferencia.
+ 
+ 
+\end{solution}

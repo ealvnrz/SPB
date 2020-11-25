@@ -1,0 +1,44 @@
+%@ Subject: Sampling Theory
+\addpoints
+\question[20] Consideramos los salarios anuales (variable $X$) en miles de euros de $500$ trabajadores de una empresa de la cual se obtiene la siguiente distribución de frecuencias:
+\begin{table}[h]
+\centering
+\begin{tabular}{l|l}
+$X_i$ & $n_i$ \\ \hline
+2     & 100   \\
+3     & 80    \\
+5     & 200   \\
+10    & 30    \\
+20    & 30    \\
+50    & 30    \\
+100   & 20    \\
+200   & 10   
+\end{tabular}
+\end{table}
+
+Se estratifica la población en grupos homogénes de ganancias salariales utilizando como variable de estratificación el propio salario anual mediante el criterio dado por $2\leq X <10$, $10\leq X <100$, $100\leq X \leq 200$.
+\noaddpoints
+\begin{parts}
+\part[10] Realizar las afijacaciones de mínima varianza (afijación óptima) sin reposición de una muestra de tamaño $100$ cuando se estima el salario anual medio.
+\part[10] Tras la primera afijación, se decide que del estrato $100\leq X \leq 200$ sólo se obtendrán $30$ observaciones. ¿Como será la nueva afijación óptima?
+\end{parts}
+\begin{solution}
+Para cada uno de los estratos se tiene: 
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|l|}
+\hline
+Estrato & $S_h$ & $S_{h}^{2}$ & $N_h$ \\ \hline
+I       & 1.32  & 1.75        & 380   \\ \hline
+II      & 17.1  & 292.13      & 90    \\ \hline
+III     & 47.95 & 2298.85     & 30    \\ \hline
+\end{tabular}
+\end{table}
+Así, usando la fórmula de afijación óptima se tiene: 
+$$n_{h}=n\dfrac{N_h S_h}{\sum_{h=1}^{L}N_h S_h} \Rightarrow n_1 \approx 15, n_2 \approx 44, n_3\approx 41$$
+
+Seleccionamos 30 unidades para el estrato 3, por lo que las 70 unidades restantes deben ser repartidas mediante afijación de mínima varianza entre los dos primeros estratos. Así, 
+
+$$n_1\approx17 \quad n_2 \approx 53 \quad n_3 \approx 30$$
+
+\end{solution}
