@@ -1,0 +1,37 @@
+%@ Subject: Sampling Theory
+\addpoints
+\question[30] Se desea estimar la facturación media de compañías de cierto rubro. Las compañias son clasificadas de acuerdo a su facturación en tres clases. Un censo muestra los siguientes datos.
+
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{cc}
+Facturación en millones de Euros & Número de Compañias \\ \hline
+desde 0 a 1                      & 1000               \\
+desde 1 a 10                     & 100                 \\
+desde 10 a 100                   & 10                 
+\end{tabular}
+\end{table}
+El estudio a efectuar determina que se realizará un muestra de tamaño 111. Asumiendo que la distribución de compañias es \textbf{uniforme} dentro de cada estrato.\\
+\textit{Ayuda: Recordar que $\mathbb{V}(X)=(b-a)^2/12$ si $X\sim U(a,b)$}
+
+\noaddpoints
+\begin{parts}
+\part[10] Obtenga la varianza del estimador de la facturación media bajo un diseño estratificado y afijación \textbf{proporcional}.
+\part[20] Obtenga la varianza del estimador de la facturación media bajo un diseño estratificado y afijación \textbf{óptima}.
+\end{parts}
+
+\begin{solution}
+Dado que la varianza en una distribución uniforme está dada por:
+$$\mathbb{V}(X)=\dfrac{(b-a)^2}{12}$$
+se obtienen las varianzas para la población en estudio:
+$$\dfrac{N}{N-1}\mathbb{V}(X)=S^2$$
+Así, obtenemos:
+$$S_{y1}^{2}\approx 0.0834168 \hspace{20pt} S_{y2}^{2}\approx 6.81818 \hspace{20pt} S_{y3}^{2}\approx 750$$
+Para la afijación proporcional, es claro ver que $n_1=100, n_2=10$ y $n_3=1$. Luego, usando la fórmula de varianza bajo un muestreo estratificado obtenemos $$\mathbb{V}(\hat{\overline{Y}})\approx 0.06037$$
+Bajo un muestreo óptimo, se tiene:
+$$N_1 S_{y1}^{2}\approx 288.82 \hspace{20pt} N_2 S_{y2}^{2}\approx 261.116 \hspace{20pt} N_3 S_{y3}^{2}\approx 273.861$$
+Así, se obtienen las afijaciones $n_1\approx 38.9161 , n_2\approx 35.1833$ y $n_3\approx 36.9006$. De lo anterior, es claro ver que el tercer estrato es mayor a $N_3=10$, por lo que seleccionamos todas las unidades desde aquel estrato, esto es, $n_3=N_3=10$ y luego seleccionamos \textbf{óptimamente} 101 unidades de las restantes 1100 unidades pertenecientes a los estratos 1 y 2. Así, obtenemos: $n_1\approx 53$ y $n_2\approx 48$. Finalmente, al tener esta afijación obtenemos:
+
+$$\mathbb{V}(\hat{\overline{Y}})\approx 0.0018092$$
+\end{solution}

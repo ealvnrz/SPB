@@ -1,0 +1,18 @@
+%@ Subject: Sampling Theory
+
+\addpoints
+
+\question[10] Compare las varianzas de los estimadores del total poblacional bajo una estimación directa y de diferencia. Obtenga un condición para cuando el estimador de diferencia es estrictamente mejor que el estimador directo.
+
+\begin{solution}
+Para comparar las varianzas pedidas, simplemente restamos y analizamos:
+\begin{align*}
+\mathbb{V}(\hat{Y})-\mathbb{V}(\hat{Y_D})&= N^2 \left(1-\dfrac{n}{N}\right)\dfrac{1}{n}S_{y}^{2} - N^2 \left(1-\dfrac{n}{N}\right) \dfrac{1}{n} (S_{y}^{2}+S_{x}^{2}-2S_{xy})\\
+&= N^2 \left(1-\dfrac{n}{N}\right)\dfrac{1}{n} (2S_{xy}-S_{x}^{2})
+\end{align*}
+Así, el estimador de diferencia es estrictamente mejor que el estimador directo cuando:
+$$2S_{xy}-S_{x}^{2}>0$$
+lo cual puede ser reescrito como:
+$$B>\dfrac{1}{2}$$
+en donde $B$ representa la pendiente en el estimador de regresión. (o equivalentemente $\dfrac{S_{xy}}{S_{x}^{2}})$
+\end{solution}
