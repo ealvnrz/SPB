@@ -1,0 +1,53 @@
+%@ Subject: Sampling Theory
+
+Para el trabajo final del curso, utilizaremos un conjunto de datos llamado \textbf{agpop} disponible en el repositorio \textbf{SDaA} en CRAN. El recurso computacional a utilizar es de libre elección, para quienes no utilicen R, deberán exportar el conjunto de datos desde el repositorio CRAN para ser utilizado en el software escogido.\\
+
+Para efectos de los cálculos deberán determinar una \textbf{semilla única} para su trabajo.\\
+
+\textbf{Descripción del conjunto de datos}
+
+\\
+La base de datos mencionada, corresponde a los resultados de un censo realizado por el gobierno de Estados Unidos mediante el departamento encargado de agricultura, el cual es realizado cada 5 años. En el estudio, se recolectan datos de todas las granjas (definidas como \textit{cualquier lugar en el cual 1000 o más productos agrícolas son producidos y vendidos)} entre los 50 estados que componen la nación.\\
+
+Los datos \textbf{agpop} contienen la información de los años 1982, 1987 y 1992 por condado y estado de la superficie total en acres dedicada a granjas, número de granjas, número de granjas menores a 9 acres y número de granjas mayores a 1000 acres, respectivamente según el orden de las columnas.\\
+
+Utilizando el conjunto de datos descrito, deberá confeccionar un informe técnico que contenga lo siguiente:
+
+\begin{enumerate}[a)]
+\item Análisis exploratorio de datos del conjunto de datos.
+\item Realización de un muestreo aleatorio simple de tamaño 300, del cual deberá confeccionar:
+\begin{itemize}
+\item Estimación del número total de acres dedicado a granjas en los Estados Unidos.
+\item Intervalo de confianza del $95\%$ para la cantidad anteriormente estimada.
+\item Análisis de la variación porcentual entre los años 1982, 1987 y 1992 del número total de acres dedicado a granjas en los Estados Unidos.
+\item Tamaño de muestra de muestra necesario con un $95\%$ de confianza tal que el error de estimación sea a lo más de 10.000 unidades.
+\end{itemize}
+\item Realización de un muestreo estratificado por estado de tamaño 300 (esto es, considerar cado estado como un estrato) y afijación proporcional respecto del número total de granjas. Utilizando los datos muestrales obtenido, confeccione:
+\begin{itemize}
+\item Estimación del número total de acres dedicado a granjas en los Estados Unidos.
+\item Intervalo de confianza del $95\%$ para la cantidad anteriormente estimada.
+\item Análisis de la variación porcentual entre los años 1982, 1987 y 1992 del número total de acres dedicado a granjas en los Estados Unidos.
+\end{itemize}
+\item Comparación de los resultados obtenido bajo un muestreo aleatorio simple y un muestreo estratificado.
+\end{enumerate}
+
+El informe, presentación y códigos realizados deberán ser entregados a lo más el \textbf{miércoles 16/12} (antes de clase) mediante el módulo del curso. Las presentaciones de realizaran las sesiones del \textbf{16/12} y \textbf{18/12}, deberán durar a lo más 1 hora.\\
+
+\textbf{Máximo de integrantes por trabajo: 3}
+
+La rúbrica de evaluación asociada los trabajos es la siguiente:
+
+\begin{table}[h!]
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+Criterios                                                           & Puntaje & Sobresaliente (5.5-7)                                                                                                                                      & Suficiente (4.0 - 5.4)                                                                                                                                         & Deficiente ($<4.0$)                                                                                                                        \\ \hline
+Estructura                                                          & 1 - 7   & \begin{tabular}[c]{@{}l@{}}El trabajo presenta claramente todos los \\ contenidos solicitados.\end{tabular}                                        & \begin{tabular}[c]{@{}l@{}}El trabajo presenta claramente la mayoría de\\  los contenidos solicitados.\end{tabular}                                & \begin{tabular}[c]{@{}l@{}}El trabajo presenta menos de la mitad\\ de los contenidos solicitados.\end{tabular}                   \\ \hline
+\begin{tabular}[c]{@{}l@{}}Metodología \\ y resultados\end{tabular} & 1 - 7   & \begin{tabular}[c]{@{}l@{}}La metodología usada es la correcta \\ y los resultados son presentados claramente.\end{tabular}                        & \begin{tabular}[c]{@{}l@{}}La metodología usada es la correcta y\\  los resultados son presentados claramente\\  con errores menores.\end{tabular} & \begin{tabular}[c]{@{}l@{}}La metodología usada es incorrecta\\  y los resultados son erróneos.\end{tabular}                     \\ \hline
+Conclusiones                                                        & 1 - 7    & \begin{tabular}[c]{@{}l@{}}Las conclusiones son presentadas claramente\\  y demuestran una clara comprensión \\ del material teórico.\end{tabular} & \begin{tabular}[c]{@{}l@{}}Las conclusiones no son presentadas claramente \\ y demuestran cierta comprensión\\  del material teórico.\end{tabular}    & \begin{tabular}[c]{@{}l@{}}Las conclusiones son presentadas y \\ no demuestran comprensión \\ del material teórico.\end{tabular} \\ \hline
+Preguntas y presentación                                                      & 1 - 7    & \begin{tabular}[c]{@{}l@{}} Las preguntas son respondidas en su totalidad\\ y la presentación es clara y fluida. \end{tabular} & \begin{tabular}[c]{@{}l@{}} Las preguntas son respondidas de manera incompleta\\ y la presentación es clara y mayoritariamente fluida\end{tabular}    & \begin{tabular}[c]{@{}l@{}}Las preguntas no son respondidas\\ y la presentación no es clara ni fluida\end{tabular} \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+La nota final correspondrá al promedio simple entre las notas asignadas en los criterios descritos.

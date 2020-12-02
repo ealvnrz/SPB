@@ -64,13 +64,13 @@ Total & 154.5 & 165.7 \\
 \end{parts}
 \begin{solution}
 El cambio relativo $R$ en el valor actual puede ser estimado mediante un estimador de razón, así:
-$$\hat{R}=\dfrac{\hat{X}}{\hat{Y}}=\dfrac{\overline{x}}{\overline{y}}=\dfrac{\sum_{i=1}^{n} x_i}{\sum_{i=1}^{n} y_i}=\dfrac{164.7}{154.5}=1.07$$
+$$\hat{R}=\dfrac{\hat{X}}{\hat{Y}}=\dfrac{\overline{x}}{\overline{y}}=\dfrac{\sum_{i=1}^{n} x_i}{\sum_{i=1}^{n} y_i}=\dfrac{165.7}{154.5}=1.07$$
 
 Luego, para obtener una cota para el error de estimación debemos obtener $\widehat{\mathbb{V}(\hat{R})}$:
 
-$$\widehat{\mathbb{V}(\hat{R})}=\dfrac{1}{n(n-1)\overline{Y}^2}\left[ \sum_{i=1}^{n} X_{i}^2 + \hat{R}^2 \sum_{i=1}^{n} Y_{i}^2-2\hat{R} \sum_{i=1}^{n} X_i Y_i \right]=0.0001$$
+$$\widehat{\mathbb{V}(\hat{R})}=\dfrac{(1-\dfrac{n}{N})}{n(n-1)\overline{Y}^2}\left[ \sum_{i=1}^{n} X_{i}^2 + \hat{R}^2 \sum_{i=1}^{n} Y_{i}^2-2\hat{R} \sum_{i=1}^{n} X_i Y_i \right]\approx 0.00005$$
 
-Así, nuestra cota para el error de estimación estará dado por: $2*\sqrt{\widehat{\mathbb{V}(\hat{R})}}=2*\sqrt{0.0001}=0.02$
+Así, nuestra cota para el error de estimación estará dado por: $2*\sqrt{\widehat{\mathbb{V}(\hat{R})}}=2*\sqrt{0.00005}\approx 0.01490065$
 
 Finalmente, obtenemos la estimación de la media poblacional utilizando una estimación indirecta de razón:
 
@@ -78,10 +78,10 @@ $$\hat{\overline{X}}=\hat{R}*\overline{Y}=8.26575$$
 
 y su varianza asociada:
 
-$$\widehat{\mathbb{V}(\hat{\overline{X}})}=\overline{Y}^2 * \widehat{\mathbb{V}(\hat{R})}=(7.725)^2*0.0001=0,0059675625$$
+$$\widehat{\mathbb{V}(\hat{\overline{X}})}=\overline{Y}^2 * \widehat{\mathbb{V}(\hat{R})}=(7.725)^2*0.00005\approx 0.003312437$$
 
 Y contrastamos con la estimación directa de la media poblacional bajo un muestreo aleatorio simple:
 $$\widehat{\mathbb{V}(\overline{X})}=\left(\dfrac{N-n}{N}\right)\dfrac{s^2}{n}=0.04488787$$
 
-Por lo que, la \textbf{ganancia porcentual} corresponde a un $86.70562\%$ con respecto a la obtenida bajo una estimación directa.
+Por lo que, la \textbf{ganancia porcentual} corresponde a un $92.62064\%$ con respecto a la obtenida bajo una estimación directa.
 \end{solution}
