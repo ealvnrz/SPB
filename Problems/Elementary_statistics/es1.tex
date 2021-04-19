@@ -1,7 +1,26 @@
 %@ Subject: Elementary Statistics
 \addpoints
-\question[15] Una empresa investigadora de mercado realiz\'o un estudio del n\'umero de anuncios mostrados por TV en horario de la tarde, a lo largo de 10 d\'ia. Los resultados obtenidos para determinado canal fueron los siguientes:\begin{table}[h]\begin{center}\begin{minipage}[r]{0.3\textwidth}\begin{tabular}{|l|l|}\hline N\'umero anuncios & Espectadores (M) \\ \hline49                & $359.6$        \\ \hline42                & $296.1$        \\ \hline30                & $271.6$       \\ \hline26                & $251.1$        \\ \hline31                & $229.3$        \\ \hline20                & $186.9$        \\ \hline21                & $186.3$        \\ \hline24                & $172.7$        \\ \hline15                & $166$          \\ \hline19                & $162.1$        \\ \hline\end{tabular}\end{minipage}\hspace{2cm}\begin{minipage}[r]{0.3\textwidth}\begin{align*}\sum \text{N\'umero de anuncios} &= 277 \\\sum \text{Espectadores} &= 2281.7 \\\sum \text{N\'umero de anuncios}^2 &= 8705 \\\sum \text{Espectadores}^2 &= 559680.63\\\sum \text{Nro. anuncios} \cdot \text{Espectadores} &= 69206.5\end{align*}\end{minipage}\end{center}\end{table}\noaddpoints\begin{parts}\part[3] Identifique, clasifique y grafique las variables en estudio.\part[5] ?`Cu\'al de las dos variables es m\'as homog\'enea?\part[7] Mediante una medida adecuada, indique el nivel y ipo de asociaci\'on entre las variables.\end{parts}
+\question[15] Una empresa investigadora de mercado realizó un estudio del número de anuncios mostrados por TV en horario de la tarde, a lo largo de 10 día. Los resultados obtenidos para determinado canal fueron los siguientes:\begin{table}[h]\begin{center}\begin{minipage}[r]{0.3\textwidth}\begin{tabular}{|l|l|}\hline N\'umero anuncios & Espectadores (M) \\ \hline49                & $359.6$        \\ \hline42                & $296.1$        \\ \hline30                & $271.6$       \\ \hline26                & $251.1$        \\ \hline31                & $229.3$        \\ \hline20                & $186.9$        \\ \hline21                & $186.3$        \\ \hline24                & $172.7$        \\ \hline15                & $166$          \\ \hline19                & $162.1$        \\ \hline\end{tabular}\end{minipage}\hspace{2cm}\begin{minipage}[r]{0.3\textwidth}\begin{align*}
+\sum \text{N\'umero de anuncios} &= 277 \\
+\sum \text{Espectadores} &= 2281.7 \\
+\sum \text{N\'umero de anuncios}^2 &= 8705 \\
+\sum \text{Espectadores}^2 &= 559680.63\\\sum \text{Nro. anuncios} \cdot \text{Espectadores} &= 69206.5\end{align*}\end{minipage}\end{center}\end{table}
+\noaddpoints
+\begin{parts}
+\part[3] Identifique, clasifique y grafique las variables en estudio.
+\part[5] ¿Cuál de las dos variables es más homogénea?
+\part[7] Mediante una medida adecuada, indique el nivel y tipo de asociación entre las variables.
+\end{parts}
 
 \begin{solution}
-$X:\{$n\'umero de anuncios$\}$; variable cuantitativa discreta\\$Y:\{$n\'umero de espectadores$\}$; variable cuantitativa discreta\\$$\overline{X}=27.7 \hspace{2cm} \overline{Y}=228.17$$Utilizando los datos dados y la f\'ormula, para x e y, respectivamente:$$S_{X}^{2}=\dfrac{1}{n-1}\left[ \sum_{i=1}^{n} X_{i}^{2}- n\overline{X}^2\right]$$Obtenemos:$$S_{X}^{2}=114.6778 \hspace{2cm} S_{Y}^{2}=4340.571$$Luego, obtenemos los coeficientes de variaci\'on respectivos:$$CV_{X}=\dfrac{\sqrt{114.6778}}{27.7}=0.386593\hspace{2cm}CV_{Y}=\dfrac{\sqrt{4340.571}}{228.17}=0.2887453$$Finalemente, una medida adecuada de asociaci\'on es el coeficiente de correlaci\'on de Pearson:$$r_{X,Y}=\dfrac{COV(X,Y)}{S_X S_Y}=\dfrac{\dfrac{1}{n-1}\left[ \sum X_i Y_i -n \overline{x}\overline{y}\right]}{S_X S_Y}=0.9454583$$Por lo que existe un relaci\'on lineal fuerte entre el n\'umero de anuncios y el n\'umero de espectadores.
+$X:\{$Número de anuncios$\}$; variable cuantitativa discreta\\$Y:\{$Número de espectadores$\}$; variable cuantitativa discreta\\
+$$\overline{X}=27.7 \hspace{2cm} \overline{Y}=228.17$$
+Utilizando los datos dados y la fórmula, para x e y, respectivamente:
+$$S_{X}^{2}=\dfrac{1}{n-1}\left[ \sum_{i=1}^{n} X_{i}^{2}- n\overline{X}^2\right]$$
+Obtenemos:$$S_{X}^{2}=114.6778 \hspace{2cm} S_{Y}^{2}=4340.571$$
+Luego, obtenemos los coeficientes de variación respectivos:
+$$CV_{X}=\dfrac{\sqrt{114.6778}}{27.7}=0.386593\hspace{2cm}CV_{Y}=\dfrac{\sqrt{4340.571}}{228.17}=0.2887453$$
+Finalemente, una medida adecuada de asociación es el coeficiente de correlación de Pearson:
+$$r_{X,Y}=\dfrac{COV(X,Y)}{S_X S_Y}=\dfrac{\dfrac{1}{n-1}\left[ \sum X_i Y_i -n \overline{x}\overline{y}\right]}{S_X S_Y}=0.9454583$$
+Por lo que existe un relación lineal fuerte entre el número de anuncios y el número de espectadores.
 \end{solution}

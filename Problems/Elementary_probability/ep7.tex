@@ -1,0 +1,40 @@
+%@ Subject: Elementary Probability
+\addpoints
+
+\question[15] Suponga que un día despierta con fuerte dolor de cabeza, síntoma que atrubuye a una gripe común. Dada la información que hay en los medios de comunicación, sabe que hay una posibilidad que haya contraído COVID-19. 
+
+Revisando reportes de organismos de salud,  indican que el $80\%$ de las personas con gripe común presentan dolor de cabeza y el $90\%$ con COVID-19 muestra dolor de cabeza como uno de sus síntomas.
+
+Otra información relevante es que la prevalencia de COVID-19 en la población es de un $0.1\%$ y de la gripe común es de un $10\%$. Además que la afección del dolor de cabeza es de un $8.1\%$ en la población.
+
+\noaddpoints
+\begin{parts}
+\part[5] Defina sucesos e identique las probabilidades. 
+\part[5] Determine la probabilidad de tener gripe común dado que sufre de dolor de cabeza.
+\part[5] Determine la probabilidad de tener COVID-19 dado que sufre de dolor de cabeza.
+\end{parts}
+
+\begin{solution}
+Podemos definir los eventos del siguiente modo:\\
+
+D: La persona que presenta dolor de cabeza.\\
+
+G: La persona que presenta gripe común.\\
+
+C: La persona que presenta COVID-19\\
+
+Las probabilidades asociadas son:
+
+$\mathbb{P}(D)=0.081$
+
+$\mathbb{P}(G)=0.1$
+
+$\mathbb{P}(C)=0.001$
+
+Por la definición del teorema de Bayes y la información que podemos obtener del enunciado, tenemos que:
+
+$\mathbb{P}(G|D)=\frac{\mathbb{P}(D|G) \mathbb{P}(G)}{\mathbb{P}(D)} =\dfrac{0.8*0.1}{0.081} $
+
+$\mathbb{P}(C|D)=\frac{\mathbb{P}(D|C) \mathbb{P}(C)}{\mathbb{P}(D)} =\dfrac{0.9*0.001}{0.081} $
+
+\end{solution}

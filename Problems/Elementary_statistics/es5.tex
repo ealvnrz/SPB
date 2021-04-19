@@ -1,0 +1,58 @@
+%@ Subject: Elementary Statistics
+\addpoints
+
+\question[20] Tenemos los siguientes datos de ingresos  (miles de pesos) de una muestra de 50 personas.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{lllll}
+647  & 1891 & 770  & 901  & 657  \\
+1341 & 1411 & 1429 & 651  & 3501 \\
+417  & 338  & 1167 & 862  & 1216 \\
+1893 & 1322 & 1076 & 1159 & 1096 \\
+1333 & 510  & 5512 & 698  & 844  \\
+1858 & 1323 & 699  & 1819 & 851  \\
+578  & 943  & 1689 & 492  & 1203 \\
+322  & 1656 & 1649 & 726  & 326  \\
+1287 & 876  & 1809 & 857  & 885  \\
+1950 & 8958 & 447  & 912  & 666 
+\end{tabular}
+\end{table}
+\noaddpoints
+\begin{parts}
+\part[3] Identifique y clasifique la variable en estudio.
+\part[9] Estime los estadísticos de tendencia central (media y mediana) y de dispersión (varianza y desviación estándar)
+\part[3] ¿Cuál es el estadístico de tendencia central apropiado para este caso? Justifique su respuesta.
+\part[5] Construya una tabla de datos agrupados considerando los quintiles como clase. Considerar marca de clase, frecuencia absoluta, frecuencia absoluta acumulada, frecuencia relativa, frecuencia relativa acumulada.
+\end{parts}
+
+\begin{solution}
+X: \{Ingresos en miles de pesos\}; Variable de tipo cuantitativa y contínua.
+
+Usando los datos de la tabla, podemos obtener los siguientes estadísticos:
+
+Media: $\overline{x}=1085.4$
+
+Mediana: $Me=1009.5$
+
+Varianza: $S^2 = \sum_{i=1}^{50} \dfrac{x_i - \overline{x}}{49}= 237648.4$
+
+Desviación Estándar: $S=\sqrt{S^2}=487.492$
+
+La tabla presenta datos que son atípicos que podemos considerar como datos extremos, por lo tanto el estadístico de tendencia central más apropiado corresponde a la mediana la cual es menos sensible a este tipo de datos en comparación con la media.
+
+La tabla de datos agrupados se muestra a continuación:
+
+
+\begin{center}
+\begin{tabular}{lccccc}
+Clase           & $m_i$  & $n_i$ & $N_i$ & $f_i$ & $F_i$ \\
+$[322 - 657[$   & 489.5  & 10    & 10    & 0.2   & 0.2   \\
+$[657 - 876[$   & 766.5  & 10    & 20    & 0.2   & 0.4   \\
+$[876 - 1216[$  & 1046   & 10    & 30    & 0.2   & 0.6   \\
+$[1216 - 1689[$ & 1452.5 & 10    & 40    & 0.2   & 0.8   \\
+$[1689 - 8958[$ & 5323.5 & 10    & 50    & 0.2   & 100  
+\end{tabular}
+\end{center}
+
+\end{solution}
