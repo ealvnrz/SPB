@@ -1,3 +1,28 @@
 %@ Subject: Sampling Theory
+\addpoints
+\question[10] Muestre que bajo un muestreo aleatorio simple se tiene que $\mathbb{V}(\overline{y})=\left(1-\dfrac{n}{N}\right) \dfrac{S^2}{n}$
 
-\question Muestre que bajo un muestreo aleatorio simple se tiene que $\mathbb{V}(\overline{y})=\left(1-\dfrac{n}{N}\right) \dfrac{S^2}{n}$
+\begin{solution}
+$$n(\overline{y}-\overline{Y})=(y_1-\overline{Y})+(y_2-\overline{Y})+\dots+(y_n-\overline{Y})$$
+Luego, debido a que cada unidad muestral aparece el mismo número de veces en las muestras posible, entonces:\\
+$\mathbb{E}(y_1+y_2+\dots+y_n)$ debe ser un múltiplo de $y_1+y_2+\dots+y_N$. Este múltiplo es $n/N$ debido a que la expresión de la izquierda tiene $n$ términos y la de la derecha tiene $N$ términos. Así,
+
+$$E\left[(y_1-\overline{Y})^2+\dots+(y_n-\overline{Y})^2\right]=\dfrac{n}{N}\left[(y_1-\overline{Y})^2+\dots+(y_N-\overline{Y})^2\right]$$
+y además,
+\begin{align*}
+&E\left[(y_1-\overline{Y})(y_2-\overline{Y})+(y_1-\overline{Y})(y_3-\overline{Y})+\dots+(y_{n-1}-\overline{Y})(y_n-\overline{Y})\right]\\
+&= \dfrac{n(n-1)}{N(N-1)}\bigg\lbrace(y_1-\overline{Y})(y_2-\overline{Y})+(y_1-\overline{Y})(y_3-\overline{Y})+\dots+(y_{N-1}-\overline{Y})(y_N-\overline{Y})\bigg\rbrace
+\end{align*}
+Luego,
+\begin{align*}
+n^2\mathbb{E}\left[(\overline{y}-\overline{Y})^2\right]&=\dfrac{n}{N}\bigg\lbrace(y_1-\overline{Y})^2+\dots+(y_N-\overline{Y})^2+\dfrac{2(n-1)}{N-1}\\
+&\left[(y_1-\overline{Y})(y_2-\overline{Y})+(y_1-\overline{Y})(y_3-\overline{Y}) + \dots+(y_{N-1}-\overline{Y})(y_N-\overline{Y})\right]\bigg\rbrace
+\end{align*}
+Completando el cuadrado, se tiene:
+\begin{align*}
+n^2\mathbb{E}\left[(\overline{y}-\overline{Y})^2\right]&=\dfrac{n}{N}\bigg\lbrace \left(1- \dfrac{n-1}{N-1}\right)\left[(y_1-\overline{Y})^2+\dots+(y_N-\overline{Y})^2\right]\\
+&+ \dfrac{n-1}{N-1}\left[(y_1-\overline{Y})+\dots+(y_N-\overline{Y})\right]^2\bigg\rbrace
+\end{align*}
+En donde el segundo término desaparece, pues la suma de los $y_i$ es igual a $N\overline{Y}$. Dividiendo por $n^2$, se tiene:
+$$\mathbb{V}(\overline{y})=\mathbb{E}[(\overline{y}-\overline{Y})^2]=\dfrac{N-n}{nN(N-1)}\sum_{i=1}^{N}(y_i-\overline{Y})^2=\left(1-\dfrac{n}{N}\right)\dfrac{S^2}{n}$$
+\end{solution}

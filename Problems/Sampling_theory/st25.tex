@@ -1,0 +1,45 @@
+%@ Subject: Sampling Theory
+\addpoints
+\question[25] Un investigador desea determinar la calidad del azúcar contenida en la sabia de los árboles
+de una finca, que se encuentran situados a lo largo de la misma de forma natural en 7 hileras.
+El número total de árboles es desconocido, por lo que no puede realizarse una muestra
+irrestricta aleatoria. Como procedimiento alternativo el investigador decide usar una muestra
+sistemática de 1 en 7. En la siguiente tabla se encuentran los datos del contenido de azúcar en
+la sabia de los árboles muestreados:
+
+\begin{center}
+$\begin{array}{ccc}
+\begin{array}{c}
+\text { Árbol } \\
+\text { muestreado }
+\end{array} & \begin{array}{c}
+\text { Contenido de azúcar } \\
+\text { en la savia } X
+\end{array} & X^{2} \\
+\hline 1 & 82 & 6724 \\
+2 & 76 & 5776 \\
+3 & 83 & 6889 \\
+\vdots & \vdots & \vdots \\
+210 & 84 & 7056 \\
+211 & 80 & 6400 \\
+212 & 79 & 6241 \\ \\
+& \sum_{i=1}^{212} X_{i}=17066 & \sum_{i=1}^{212} X_{i}^{2}=1486800
+\end{array}$
+\end{center}
+\noaddpoints
+\begin{parts}
+\part[15] Estimar el contenido de azúcar promedio en la sabia de los árboles de la finca, junto con su desviación media y coeficiente de variación. ¿Fue necesario asumir alguna característica de la población objetivo?
+\part[10] Obtenga un intervalo de confianza del $95\%$ para el contenido de azúcar medio de los árboles de la finca.
+\end{parts}
+\begin{solution}
+La estimación puntual de la media estará dada por:
+$$\overline{x}=\dfrac{\sum_{i=1}^{212}X_i}{212}=80.5$$
+y, su desviación media será:
+$$s^2=\dfrac{\sum_{i=1}^{212}X_{i}^{2}-\left(\sum_{i=1}^{212}X_i\right)^2/212}{212-1}=535.48$$
+Luego, como la muestra sistemática es 1 en 7 y $n=212$, entonces $N=nk=212*7=1484$. Así,
+$$\widehat{\mathbb{V}(\overline{x})}=\left(1-\dfrac{212}{1484}\right)\dfrac{535.48}{212}=2.16$$
+Por lo que la estimación de su desviación media será: $\sqrt{\widehat{\mathbb{V}(\overline{x})}}=1.47$. Luego, la estimación de su coeficiente de variación estará dado por:
+$$\widehat{CV_{\overline{x}}}=\dfrac{1.47}{80.5}=0.0182$$
+Es claro, que para los cálculos anteriores se necesitó hacer la aproximación de las estimaciones de la varianza a las de un muestreo aleatorio simple, por lo que asumimos que la población de árboles en la finca es aleatoria en cuanto al contenido de azúcar. Finalmente, el intervalo de confianza pedido estará dado por:
+$$\overline{x} \pm 1.96 * 1.47= [77.6;83.4]$$
+\end{solution}
