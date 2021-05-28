@@ -1,0 +1,24 @@
+%@ Subject: Elementary Probability
+
+\addpoints
+\question Una variable aleatoria $X$ tiene por función de masa de probabilidad:
+$$f(x)=
+\begin{cases}
+cx \hspace{10pt} \text{si } x=1,2,\dots,n\\
+0 \hspace{10pt} \text{en otro caso}
+\end{cases}
+$$
+\noaddpoints
+\begin{parts}
+\part Encuentre el valor de la constante $c$.
+\part Obtenga la función de distribución. 
+\end{parts}
+\begin{solution}
+Para obtener el valor de la constante $c$ basta notar que $\sum_{x=1}^{n} cx = 1$, por lo que:
+$$c\sum_{x=1}^{n}x=1 \Rightarrow c=\dfrac{2}{n(n+1)}$$
+
+Luego, para obtener la función de distribución, por definición se tiene:
+$$\sum_{x=1}^{n} c x = \dfrac{2}{n(n+1)} \dfrac{x(x+1)}{2}= \dfrac{x(x+1)}{n(n+1)}$$
+Así, la función de distribución estará dada por:
+$$F(x)=\dfrac{x(x+1)}{n(n+1)}\hspace{10pt} \text{para } x=1,2,\dots,n$$
+\end{solution}

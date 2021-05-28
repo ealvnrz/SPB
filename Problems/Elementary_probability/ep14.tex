@@ -1,0 +1,46 @@
+%@ Subject: Elementary Probability
+
+\addpoints
+\question[15] Sean $X$ e $Y$ dos variables que representan el nivel de ruido en una habitación y la distribución conjunta se define como
+
+$$f(x,y)
+\begin{cases}
+x y \exp\left(  -\dfrac{1}{2} (x^2 + y^2)  \right)  \hspace{10pt} \text{si } x>0, y>0   \\
+0 \hspace{10pt} \text{en otro caso}
+\end{cases}
+$$
+
+\noaddpoints
+\begin{parts}
+\part[8] Demuestre la independencia de $X$ e $Y$.
+\part[7] Calcular $P(X<1, Y<1)$.
+\end{parts}
+
+\begin{solution}
+
+Calculamos las densidades marginales 
+
+$$f_X(x) = \int_{-\infty}^{\infty} f(x,y) dy $$
+$$f_X(x) = x \exp\left(- \dfrac{x^2}{2}  \right)  $$
+
+De manera similar 
+
+$$f_Y(y) = \int_{-\infty}^{\infty} f(x,y) dx $$
+$$f_Y(y) = y \exp\left(- \dfrac{y^2}{2}  \right)  $$
+
+De la definición de independencia sabemos que, se cumple:
+
+$$f(x|y)= \dfrac{f(x,y)}{f_Y(y)} =f_X(x)$$
+
+Por lo que tenemos la siguiente relación:
+
+$$ f(x|y)= \dfrac{f(x,y)}{f_Y(y)} =\dfrac{x y \left(  -\dfrac{1}{2} (x^2 + y^2)  \right) }{y \exp\left(- \dfrac{y^2}{2}  \right)} =  x \exp\left(- \dfrac{x^2}{2}  \right) $$
+
+Así, $X$ e $Y$ son independinetes.
+
+Luego, para el cálculo de $ P(X<1, Y<1)$ debemos resolver la siguiente integral,
+
+$$ P(X<1, Y<1) = \int_{0}^{1} \int_{0}^{1} f(u,v) du dv$$
+$$ P(X<1, Y<1) = \int_{0}^{1}  u \exp  \left( -\dfrac{u^2}{2}  \right) du \int_{0}^{1} v \exp  \left( -\dfrac{v^2}{2}  \right) dv \approx 0.155 $$
+
+\end{solution}

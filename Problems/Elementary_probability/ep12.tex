@@ -1,0 +1,38 @@
+%@ Subject: Elementary Probability
+
+\addpoints
+\question[25] El diámetro de cierto eje mecánico, medido en centímetros, se distribuye $N(2.79;0.01^2)$. Un inspector de calidad establece que si las medidas del diámetro están en el rango $[2.74;2.8]$ entonces se consideran en buen estado.
+\noaddpoints
+\begin{parts}
+\part[5] Defina la variable aleatoria en estudio.
+\part[10] Si se producen 1000 ejes. ¿Cuántos ejes se espera sean defectuosos?.
+\part[10] Diariamente, el inspector de calidad examina 10 ejes, y si encuentra que 3 o más ejes no cumplen con las especificaciones para ser considerados en buen estado, entonces recomendará una inspección a mayor escala. ¿Cuál es la probabilidad de que no se recomiende una inspección a mayor escala?.
+\end{parts}
+
+\begin{solution}
+Sea $X$ la variable en estudio, entonces:
+\begin{center}
+$X:\{$ Diámetro de cierto eje mecánico en centímetros $\}, X\sim N(2.79;0.01^2)$
+\end{center}
+Para obtener el número esperado de ejes defectuosos, primero notamos que si:
+$$2.74 < X < 2.8$$
+Entonces el eje se considerará en buen estado. Por lo que la probabilidad que un eje esté defectuoso está dada por:
+\begin{align*}
+\mathbb{P}(X\leq 2.74) + \mathbb{P}(X\geq 2.8)&= \mathbb{P}\left( \dfrac{X-2.79}{0.01}\leq \dfrac{2.74-2.79}{0.01}\right)+ \mathbb{P} \left( \dfrac{X-2.79}{0.01}\geq \dfrac{2.8-2.79}{0.01}\right)\\
+&=\mathbb{P}(Z \leq -5)+\mathbb{P}(Z\geq 1)\\
+&=\mathbb{P}(Z\geq 1)\\
+&= 1- \mathbb{P}(Z\leq 1)\\
+&= 1- 0.8413\\
+&= 0.1587
+\end{align*}
+Luego, la cantidad de ejes que se esperan sean defectuoso es:
+$$1000*0.1587=158.7 \approx 159$$
+Finalmente, para obtener la probabilidad de que no se recomiende una inspección a mayor escala. Notamos que si definimos la variable aleatoria Y, como:
+\begin{center}
+$Y:\{$ Cantidad de ejes en buen estado de una muestra de tamaño 10 $\}$
+\end{center}
+Entonces, $Y\sim Bin(10;0.1587)$. Luego, no se recomendará una inspección a mayor escala si $Y \leq 2$. Por lo que basta encontrar:
+$$\mathbb{P}(Y\leq 2)= 0.8202$$
+El cual puede ser fácilmente obtenido al utilizar la tabla de probabilidad binomial ($p\approx 0.15$)
+
+\end{solution}

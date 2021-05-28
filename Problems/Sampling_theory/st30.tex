@@ -1,0 +1,21 @@
+%@ Subject: Sampling Theory
+
+\addpoints
+\question[45] Utilizaremos datos de la Encuesta Nacional de Victimización por Delitos de Estados Unidos (NCVS), entregados en el archivo ncvs2000.dat. Una pequeña descripción de los datos se encuentra en el archivo ncvs2000.pdf. Para efectos de esta prueba, utilizaremos las siguientes columnas:
+
+\begin{itemize}
+\item \textbf{hhinc}: Ingreso por Hogar. (US\$)
+\item \textbf{robbery}: Número de robos.
+\item \textbf{pweight}: Pesos muestrales.
+\item \textbf{pstrat}: Identificación de estrato.
+\end{itemize}
+
+Removiendo datos faltantes, de ser necesario.
+
+\noaddpoints
+\begin{parts}
+\part[15] Estime el número medio de robos por persona junto con un intervalo de confianza del $95\%$. Utilice la columna \textit{pweight} como los pesos muestrales.
+\part[10] Realice un histograma del ingreso por hogar usando los pesos muestrales.
+\part[10] Encuentre y grafique la función de distribución empírica y la función de masa de probabilidad empírica de la variable en estudio, considerando los pesos muestrales.
+\part[10] Encuentre el estimador Jackknife para el costo medio de las personas que están lesionadas, \textbf{sin considerar los pesos muestrales}. Compare este estimador con su equivalente bajo un M.A.S.
+\end{parts}

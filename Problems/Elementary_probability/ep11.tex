@@ -1,0 +1,31 @@
+%@ Subject: Elementary Probability
+
+\addpoints
+\question[10] Considere la función:
+$$f(x)
+\begin{cases}
+\dfrac{c}{(1+2x)^3}\hspace{10pt} \text{si } 0\leq x \leq \infty\\
+0 \hspace{10pt} \text{en otro caso}
+\end{cases}
+$$
+\noaddpoints
+\begin{parts}
+\part[5] Encuentre el valor de la constante $c$ para que $f(x)$ sea una función de densidad.
+\part[5]  Obtenga la función de distribución $F_{X}(x)=\mathbb{P}(X\leq x)$.
+\end{parts}
+\begin{solution}
+Para encontrar el valor de la constante c, notamos que $\int_{0}^{\infty} f(x)=1$. Así,
+\begin{align*}
+\int_{0}^{\infty} f(x)&= c \int_{0}^{\infty} \dfrac{1}{(1+2x)^3} dx \hspace{15pt} (u=2x+1)\\
+&= \dfrac{c}{2} \int_{1}^{\infty} \dfrac{1}{u^3} du \\
+&= \lim_{b\rightarrow\infty} \left( -\dfrac{c}{4u^2} \bigg\vert_{u=1}^{b}\right) \\
+&= \dfrac{c}{4}
+\end{align*}
+Así, $c=4$. Luego, para obtener la función de distribución, usando su definición se tiene:
+\begin{align*}
+F(x)&=\int_{-\infty}^{x} \dfrac{4}{(1+2t)^3} dt= \int_{0}^{x} \dfrac{4}{(1+2t)^3} dt \\
+&= \left( -\dfrac{1}{(1+2t)^2} \bigg\vert_{t=0}^{x}\right)\\
+&= -\dfrac{1}{(1+2x)^2} + 1\\
+&= \dfrac{4x(x+1)}{(2x+1)^2} \hspace{10pt} \text{si } 0\leq x \leq \infty
+\end{align*}
+\end{solution}

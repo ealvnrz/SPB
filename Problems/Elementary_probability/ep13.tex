@@ -1,0 +1,28 @@
+%@ Subject: Elementary Probability
+
+\addpoints
+\question[10] Un estudio, realizado por la Unidad Operativa de Control de Tránsito, muestra el número de accidentes que suceden en el Gran Santiago durante una semana. Las conclusiones del estudio son que el promedio de accidentes dentro de una semana laboral (5 días) es de 10 accidentes.
+
+\noaddpoints
+
+\begin{parts}
+\part[3] ¿Cuál es la probabilidad de que suceda un accidente en un día? 
+\part[3] ¿Cuál es la probabilidad de que no sucedan más de dos accidentes en 2 días? 
+\part[4] ¿Cuál es la probabilidad de que sucedan al menos 10 accidentes en una semana? 
+\end{parts}
+
+\begin{solution}
+
+En un día, la variable aleatoria $X$ se distribuye $X \sim Poisson(2)$. Por lo tanto, 
+
+$$P(X=1) \approx 0.271$$
+
+Para el caso de $2$ días la variable aleatoria $X$ se distribuye $X \sim Poisson(4)$. Así,
+
+$$ P(X \leq2) \approx 0.238 $$
+
+Para el caso de una semana, la variable aleatoria $X$ se distribuye $X \sim Poisson(10)$. Por lo que,
+
+$$P(X\geq 10)= 1- P(X< 10) \approx 0.542$$
+
+\end{solution}
