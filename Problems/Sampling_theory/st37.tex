@@ -1,0 +1,26 @@
+%@ Subject: Sampling Theory
+\addpoints
+\question[20] El director de una empresa de calzados desea estimar la longitud media del pie derecho de los hombres mayores de edad en una ciudad. Sea $y$ la variable \textit{Longitud del pie derecho} y $x$ su altura. De un censo pasado, el director sabe que la altura media de los hombres mayores de edad en aquella ciudad es de $168$ cm. Para estimar la longitud del pie, el director organiza una encuesta utilizando un muestreo aleatorio simple sin reemplazo de $100$ hombres adultos. Los resultados son los siguientes:
+$$\hat{\overline{X}}=169 \hspace{20pt} \hat{\overline{Y}}=24 \hspace{20pt} s_{x}=10  \hspace{20pt} s_{y}=2  \hspace{20pt} s_{xy}=15$$
+Si se sabe que viven $400000$ hombres adultos en la ciudad:
+\noaddpoints
+\begin{parts}
+\part[10] Estime la longitud media del pie derecho de los adultos hombres de la ciudad mediante un estimador de razón y diferencia, y sus respectivas varianzas.
+\part[5] Cuantifique la variación en precisión al utilizar las estimaciones indirectas obtenidas con respecto a la estimación directa usada bajo un muestreo aleatorio simple.
+\part[5] ¿Que estimador recomendaría usar al director de la empresa? Justifique.
+\end{parts}
+\begin{solution}
+Por definición se tiene que:
+$$\hat{\overline{Y}}_{\text{Razón}}=\dfrac{24}{169}*168=23.85799$$
+y
+$$\hat{\overline{Y}}_{D}=24-169+168=23$$
+En donde sus varianzas son:
+$$\widehat{\mathbb{V}(\hat{\overline{Y}}_{D})}\approx 0.73981$$
+y
+$$\widehat{\mathbb{V}(\hat{\overline{Y}}_{\text{Razón}})}\approx 0.01756,$$
+respectivamente. Luego, como base tendremos la estimación directa dada por:
+$$\hat{\overline{Y}}=24$$
+y su varianza asociada:
+$$\mathbb{V}(\hat{\overline{Y}})=\left(\dfrac{400000-100}{400000}\right)*\dfrac{4}{100} \approx 0.04$$
+Así, las variaciones porcentuales en precisión son $-1750\%$ y $+56.09\%$ aproximadamente, para los estimadores de diferencia y razón, respectivamente. Finalmente, notamos que las estimaciones puntales son bastante similares entre sí, pero mediante la estimación de razón obtenemos la menor varianza, por lo que se tendrá un mayor nivel de precisión.
+\end{solution}

@@ -1,39 +1,44 @@
+
 %@ Subject: Sampling Theory
+
+
+\addpoints
 
 Para el trabajo final del curso, utilizaremos un conjunto de datos llamado \textbf{agpop} disponible en el repositorio \textbf{SDaA} en CRAN. El recurso computacional a utilizar es de libre elección, para quienes no utilicen R, deberán exportar el conjunto de datos desde el repositorio CRAN para ser utilizado en el software escogido.\\
 
 Para efectos de los cálculos deberán determinar una \textbf{semilla única} para su trabajo.\\
 
 \textbf{Descripción del conjunto de datos}
-
 \\
 La base de datos mencionada, corresponde a los resultados de un censo realizado por el gobierno de Estados Unidos mediante el departamento encargado de agricultura, el cual es realizado cada 5 años. En el estudio, se recolectan datos de todas las granjas (definidas como \textit{cualquier lugar en el cual 1000 o más productos agrícolas son producidos y vendidos)} entre los 50 estados que componen la nación.\\
 
 Los datos \textbf{agpop} contienen la información de los años 1982, 1987 y 1992 por condado y estado de la superficie total en acres dedicada a granjas, número de granjas, número de granjas menores a 9 acres y número de granjas mayores a 1000 acres, respectivamente según el orden de las columnas.\\
 
 Utilizando el conjunto de datos descrito, deberá confeccionar un informe técnico que contenga lo siguiente:
+\begin{questions}
+\question Análisis exploratorio de datos del conjunto de datos.
+\question  Realización de un muestreo aleatorio simple de tamaño 400, del cual deberá confeccionar:
+\begin{parts}
+\part Estimación del número total de acres dedicado a granjas en los Estados Unidos.
+\part Intervalo de confianza del $98\%$ para la cantidad anteriormente estimada.
+\part Análisis de la variación porcentual entre los años 1982, 1987 y 1992 del número total de acres dedicado a granjas en los Estados Unidos.
+\part Tamaño de muestra de muestra necesario con un $95\%$ de confianza tal que el error de estimación sea a lo más de 8.000 unidades.
+\end{parts}
+\question Realización de un muestreo estratificado por estado de tamaño 400 (considerando cada estado como un estrato) usando una afijación proporcional y de Neyman respecto del número total de granjas. Utilizando los datos muestrales obtenido para cada afijación, realice:
+\begin{parts}
+\part Estimación del número total de acres dedicado a granjas en los Estados Unidos.
+\part Intervalo de confianza del $95\%$ para la cantidad anteriormente estimada.
+\part Análisis de la variación porcentual entre los años 1982, 1987 y 1992 del número total de acres dedicado a granjas en los Estados Unidos.
+\part Análisis de la eficiencia relativa de la afijación Neyman con respecto de la afijación proporcional para cada año para estimar el número total de acres dedicado a granjas en los Estados Unidos.
+\end{parts}
+\question Comparación de los resultados obtenido bajo un muestreo aleatorio simple y un muestreo estratificado.
+\question Proponga una estimación indirecta para estimar el número total de granjas pequeñas (menores a 9 acres) para el año 1997. Justifique su propuesta en base a los años 1987 y 1992.
+\question Conclusión.
+\end{questions}
 
-\begin{enumerate}[a)]
-\item Análisis exploratorio de datos del conjunto de datos.
-\item Realización de un muestreo aleatorio simple de tamaño 300, del cual deberá confeccionar:
-\begin{itemize}
-\item Estimación del número total de acres dedicado a granjas en los Estados Unidos.
-\item Intervalo de confianza del $95\%$ para la cantidad anteriormente estimada.
-\item Análisis de la variación porcentual entre los años 1982, 1987 y 1992 del número total de acres dedicado a granjas en los Estados Unidos.
-\item Tamaño de muestra de muestra necesario con un $95\%$ de confianza tal que el error de estimación sea a lo más de 10.000 unidades.
-\end{itemize}
-\item Realización de un muestreo estratificado por estado de tamaño 300 (esto es, considerar cado estado como un estrato) y afijación proporcional respecto del número total de granjas. Utilizando los datos muestrales obtenido, confeccione:
-\begin{itemize}
-\item Estimación del número total de acres dedicado a granjas en los Estados Unidos.
-\item Intervalo de confianza del $95\%$ para la cantidad anteriormente estimada.
-\item Análisis de la variación porcentual entre los años 1982, 1987 y 1992 del número total de acres dedicado a granjas en los Estados Unidos.
-\end{itemize}
-\item Comparación de los resultados obtenido bajo un muestreo aleatorio simple y un muestreo estratificado.
-\end{enumerate}
+El informe, presentación y códigos realizados deberán ser entregados a lo más el \textbf{miércoles 09/07} (antes de clase) mediante el módulo del curso que se pondrá a disposición. Las presentaciones se realizarán en las sesiones del \textbf{09/07} y \textbf{16/07} (en caso excepcional), deberán durar a lo más 1 hora.\\
 
-El informe, presentación y códigos realizados deberán ser entregados a lo más el \textbf{miércoles 16/12} (antes de clase) mediante el módulo del curso. Las presentaciones de realizaran las sesiones del \textbf{16/12} y \textbf{18/12}, deberán durar a lo más 1 hora.\\
-
-\textbf{Máximo de integrantes por trabajo: 3}
+\textbf{Máximo de integrantes por trabajo: 2}
 
 La rúbrica de evaluación asociada los trabajos es la siguiente:
 
@@ -49,5 +54,3 @@ Preguntas y presentación                                                      &
 \end{tabular}%
 }
 \end{table}
-
-La nota final correspondrá al promedio simple entre las notas asignadas en los criterios descritos.

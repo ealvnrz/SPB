@@ -1,0 +1,70 @@
+%@ Subject: Sampling Theory
+\addpoints
+\question[30] Se realizó una encuesta para determinar el tamaño medio de las fincas que cultivan maíz en una provincia de África del sur.  Los agricultores se clasificaron en cinco estratos según el tamaño de sus explotaciones. El costo total de la encuesta se limitó a $\$50.000$. El costo fijo de la encuesta fue presupuestado en $\$10000$ para cubrir los gastos de administración y redacción de informes. Los costos variables para la recopilación de datos por finca, incluido el transporte y el programa de llenado, se dan en la siguiente tabla, junto con otra información como el número de fincas, el tamaño promedio de las fincas y la desviación estándar de las fincas para los distintos estratos.
+
+\noaddpoints
+\begin{parts}
+\part Determine el tamaño de muestra que debe ser seleccionado desde cada estrato bajo una afijación \textbf{proporcional, Neyman} y \textbf{óptima}.
+\part Calcule la eficiencia relativa de la afijación Neyman y óptima con respecto de la afijación proporcional para estimar la media de la población cuando las muestras de cada estrato se seleccionan mediante un M.A.S. sin reemplazo.
+\end{parts}
+\begin{center}
+\begin{tabular}{ccccc} 
+&  & Área promedio & D.E. de & Costo de recolección \\
+Estrato & Número de fincas $\left(N_{i}\right)$ & con maíz (acre) $\left(\bar{Y}_{i}\right)$ & área con maíz $\left(S_{i}\right)$ & por finca $\left(c_{i}\right)$ \\
+\hline 1 & 500 & 80 & $5.25$ & 100 \\
+2 & 400 & 100 & $10.75$ & 100 \\
+3 & 300 & 120 & $15.50$ & 150 \\
+4 & 200 & 150 & $20.50$ & 175 \\
+5 & 100 & 200 & $25.00$ & 200
+\end{tabular}
+\end{center}
+
+En la literatura, algunos autores hacen la diferencia entre \textbf{afijación Neyman} y \textbf{afijación óptima}, siendo la primera un caso particular de la última. La afijación Neyman asume un costo de muestreo constante, y la afijación óptima admite diferencias en los costo por unidad de muestreo en los distintos estratos. \\
+\textit{Ayuda: Empiece por encontrar el tamaño de muestra total en cada afijación, dada las restricciones de costos, para luego encontrar las afijaciones por estrato.}
+
+\begin{solution}
+Primero planteamos la función de costo:
+$$C=C_0+\sum_{i=1}^{5}c_i n_i$$
+donde $C=50000$ y $C_0=10000$. Luego, para la afijación proporcional se tiene que:
+$$n_i=n\dfrac{N_i}{N}$$
+donde $N=\sum_{i=1}^{5}N_i$ y $n$ debe ser obtenido desde la ecuación $C-C_0=n\sum_{i=1}^{5}c_i \dfrac{N_i}{N}$, por lo que:
+$$n=\dfrac{C-C_0}{\sum_{i=1}^{5} c_i N_i/N}$$
+por lo que bajo una afijación proporcional $n_i$ está determinado por:
+$$n_i=\dfrac{C-C_0}{\sum_{i=1}^{5} c_i N_i}N_i$$
+Para la afijación Neyman, se tiene que:
+$$n_i=n\dfrac{N_i S_i}{\sum_{i=1}^{5}N_i S_i}$$
+Luego, dada la función de costos se tiene:
+$$C-C_0=n\dfrac{\sum_{i=1}^{5}c_i N_i S_i}{\sum_{i=1}^{5}N_i S_i}$$
+Así, 
+$$n=\dfrac{(C-C_0)\sum_{i=1}^{5} N_i S_i}{\sum_{i=1}^{5}c_i N_i S_i}$$
+Lo que implica que, bajo una afijación Neyman $n_i$ está determinado por:
+$$n_i=\dfrac{(C-C_0)N_i S_i}{\sum_{i=1}^{5} c_i N_i S_i}$$
+Para una afijación óptima, por definición se tiene que:
+$$n_i=\dfrac{(C-C_0)N_i S_i /\sqrt{c_i}}{\sum_{i=1}^{5} \sqrt{c_i}N_i S_i}$$
+Luego, sólo resta calcular los valores de $n_i$ para los 5 estratos bajo los distintos tipos de afijaciones. En la siguiente tabla, se presentan los resultados.
+\begin{center}
+\begin{tabular}{cccc}
+Estrato & Proporcional & Neyman & Óptima \\ 
+\hline 
+1 & 105 & 40 & 49 \\ 
+
+2 & 84 & 66 & 80 \\ 
+ 
+3 & 63 & 71 & 70 \\ 
+
+4 & 42 & 63 & 57 \\ 
+
+5 & 21 & 38 & 33 \\ 
+ \end{tabular} 
+\end{center}
+Finalmente, utilizando la fórmula:
+$$\widehat{\mathbb{V}(\overline{y})}=\sum_{i}^{5} \left(\dfrac{N_i}{N}\right)^2\left(1-\dfrac{n_i}{N_i}\right)\dfrac{S_{i}^{2}}{n_i}$$
+para los distintos $n_i$ en cada afijación, se obtiene:
+\begin{align*}
+\widehat{\mathbb{V}(\overline{y})}_{\text{prop}}&=0.4659\\
+\widehat{\mathbb{V}(\overline{y})}_{\text{Neyman}}&=0.4043\\
+\widehat{\mathbb{V}(\overline{y})}_{\text{Óptima}}&=0.394
+\end{align*}
+Así, la eficiencia relativa de las afijaciones Neyman y óptima con respecto a la afijación proporcional, son:
+$$\dfrac{\widehat{\mathbb{V}(\overline{y})}_{\text{prop}}}{\widehat{\mathbb{V}(\overline{y})}_{\text{Neyman}}}*100=115.23\% \hspace{20pt} \dfrac{\widehat{\mathbb{V}(\overline{y})}_{\text{prop}}}{\widehat{\mathbb{V}(\overline{y})}_{\text{Óptima}}}*100=118.26\% $$ 
+\end{solution}

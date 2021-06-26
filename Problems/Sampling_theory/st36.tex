@@ -1,0 +1,16 @@
+%@ Subject: Sampling Theory
+\addpoints
+\question[10] Compare las varianzas de los estimadores del total poblacional bajo una estimación directa y de diferencia. Obtenga un condición para cuando el estimador de razón es estrictamente mejor que el estimador directo.
+\begin{solution}
+\begin{align*}
+\mathbb{V}(\widehat{Y})-\mathbb{V}(\widehat{Y_R})&\approx N^2\left(1-\dfrac{n}{N}\right)\dfrac{S_{y}^2}{n}-N^2\left(1-\dfrac{n}{N}\right)\dfrac{1}{n}\left(S_{y}^2+R^2 S_{x}^{2}-2R S_{xy}\right)\\
+&=N^2\left(1-\dfrac{n}{N}\right)\dfrac{1}{n}\left(2RS_{xy}-R^2S_{x}^2\right)
+\end{align*}
+Si bien, la expresión de la varianza del estimador de razón es una aproximación, podemos aseverar que, en general, el estimador de razón es mejor que el estimador directo cuando:
+$$2RS_{xy}-R^2S_{x}^2>0$$
+del cual se tienen dos casos
+$$B> \dfrac{R}{2} \text{ si }R>0 \text{ y } B< \dfrac{R}{2} \text{ si } R<0$$
+en donde $B=\dfrac{S_{xy}}{S_{x}^2}$. En el caso donde $X$ e $Y$ son positivos, la desigualdad $B>R/2$ implica que:
+$$A<\dfrac{Y}{2N}$$
+donde $A=\dfrac{Y}{N}-B\dfrac{X}{N}$ es la ordenada en el origen de una recta de regresión. Por lo que, el estimador de razón es mejor que el estimador directo si el intercepto $A$ no está tan lejano a cero.
+\end{solution}
