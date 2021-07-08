@@ -1,0 +1,44 @@
+%@ Subject: Elementary Statistical Inference
+
+\addpoints
+\question[20] El ministerio de salud de Chile está preocupado de la evolución de la nueva variante de COVID-19, la variante Delta. Para verificar la incidencia de esta variante en Chile (porcentaje de personas afectadas), se realiza un muestreo aleatorio simple con un tamaño de muestra $N=100$ sobre el total de casos confirmados con COVID-19 para realizar una secuenciación genética y verificar si el enfermo con COVID-19 posee la nueva variante o no. Los resultados del estudio muestran que $16$ de los enfermos con COVID-19 poseían la variante Delta.  
+Además, estudios internacionales muestran que un 13\% de los casos confirmados con COVID-19 son con la variante Delta.
+ 
+
+\noaddpoints
+\begin{parts}
+\part[5] Encuentre un intervalo de confianza del 95\% para para la proporción de enfermos con la variante Delta.
+\part[5] ¿Es posible afirmar que el grado de incidencia de la variante Delta es mayor en Chile? Asuma un nivel de confianza de un 95\%.
+\part[10] Asuma un tamaño de muestra $N=500$ y un nivel de confianza de 95\%. ¿ Cambiarán las conclusiones obtenidas en la parte (b)?
+\end{parts}
+
+\begin{solution}
+Por enunciado podemos definir:
+$$X :\{ \text{Proporción de infectados con COVID-19 con la variante Delta} \}$$
+
+Con  $X \sim Bin(1,p)$. El Intervalo de confianza para las proporciones está dado por:
+
+$$\left[ \widehat{p} \pm Z_{1-\alpha/2} \sqrt{\dfrac{\widehat{p}(1-\widehat{p})}{n}}\right]$$
+
+Los datos proporcionados nos indican que $\widehat{p}= 0.16$, $n=100$ y $\alpha=0.05$. El intervalo de confianza es:
+
+$$[0.1592; 0.1607]$$
+
+Por lo tanto podemos afirmar con un 95\% que la proporción de enfermos con variante Delta está entre un $15.9\%$ y un $16.1\%$.
+
+Para determinar si el grado de incidencia en Chile es mayor que en el resto del muno procedemos a realizar un test de hipótesis del siguiente modo:
+
+$$H_0:\widehat{p} \leq 13\% \quad \quad   H_1: \widehat{p}>13\%$$
+
+Así nuestro estadístico $E$ está dado por:
+
+$$E = \dfrac{0.16-0.13}{\sqrt{\dfrac{0.13(1-0.13)}{100}}} =0.88 $$
+ 
+Y rechazamo $H_0$ si $E>1.64$. Por lo tanto no rechazamos $H_0$.
+
+Para el caso de suponer un $N=500$, tenemos:
+
+$$E = \dfrac{0.16-0.13}{\sqrt{\dfrac{0.13(1-0.13)}{500}}} =1.96 $$
+
+Por lo que rechamos $H_0$ y tenemos evidencia estadística para asumir la hipótesis alternativa.
+\end{solution}

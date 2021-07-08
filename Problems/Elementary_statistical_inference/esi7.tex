@@ -1,0 +1,31 @@
+%@ Subject: Elementary Statistical Inference
+
+\addpoints
+\question[20] El consumo de gasolina de cierto tipo de vehículos de transporte se distribuye aproximadamente normal. Si una muestra aleatoria de 64 vehículos tiene un consumo promedio de 16 \textit{[kms/litro]} con una desviación estándar de 6 \textit{[kms/litro]}.
+
+\noaddpoints
+\begin{parts}
+\part[5] Encuentre un intervalo de confianza del 92\% para el consumo medio de gasolina de todos los vehículos de este tipo.
+\part[5] Determine un intervalo de confianza del 94\% para la varianza.
+\part[10] ¿De qué tamaño debe ser la muestra si queremos tener 95\% de seguridad que el error de estimación no supere 0.5 \textit{[kms/litro]}?.
+\end{parts}
+
+\begin{solution}
+Por enunciado podemos definir:
+$$X :\{ \text{Consumo de gasolina de cierto tipo de vehículos de transporte en kms/litro} \}$$
+con $X \sim N(\mu,\sigma^2)$. Para la construcción del intervalo de confianza, notamos que no se conoce la varianza muestral y que el tamaño de muestra puede ser considerado grande ($n>50$), por lo que el intervalo de confianza estará dado por:
+$$\left[ \overline{x} \pm Z_{1-\alpha/2}\dfrac{s}{\sqrt{n}}\right]$$
+Basados en la muestra, se tiene que: $\overline{x}=16, s=6, n=64$ y $\alpha=0.08$. Así, el intervalo de confianza es aproximadamente:
+$$\left[ 14.68375;17.31625\right] $$
+Por lo tanto, podemos afirmar con un 92\% de confianza que el consumo medio de cierto tipo de vehículos de transporte se encuentra aproximadamente entre 14.68 y 17.32 \textit{[kms/litro]}.\\
+
+Para el caso de la varianza, la forma general del intervalo tiene la forma:
+$$\left[ \dfrac{(n-1)s^{2}}{\chi_{1-\alpha/2}^{2}(n-1)};\dfrac{(n-1)s^{2}}{\chi_{\alpha/2}^{2}(n-1)}\right]$$
+Así, reemplazando con los datos muestrales cambiando sólo el nivel de significancia $\alpha=0.06$, obtenemos:
+$$\left[ 27.22689;56.02767\right] $$
+Aproximando a los valores más cercanos en la tabla de probabilidades. Por lo que, podemos afirmar con un 94\% de confianza que la varianza del consumo medio de cierto tipo de vehículos de transporte se encuentra aproximadamente entre 27.22 y 56.03 \textit{[kms/litro]}.\\
+
+Finalmente por enunciado sabemos que para calcular el tamaño muestral se debe plantear:
+$$Z_{1-\alpha/2}\dfrac{s}{\sqrt{n}} \leq 0.5$$
+En donde, reemplazando con los datos muestrales y despejando el tamaño muestral se obtiene que $n \approx 554$.
+\end{solution}

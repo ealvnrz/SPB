@@ -1,0 +1,46 @@
+%@ Subject: Elementary Statistical Inference
+
+\addpoints
+\question[20] La cantidad promedio que se coloca en un recipiente es de 20 $gr$. Se escogen 25 recipientes al azar y si el peso promedio es menor a 19.8 $gr$ o mayor a 20.2 $gr$ se considera \textit{fuera de control}. El proceso se puede aproximar como una distribución normal con una desviación estándar de $0.5$ $gr$.
+
+
+\noaddpoints
+\begin{parts}
+\part[10] Calcule el nivel de confianza del intervalo para que el proceso se encuentre \textit{bajo control}.
+
+Un operario saca las 25 muestras y calcula un promedio de $20.1$ $gr$ y la desviación estándar $0.7$ $gr$.
+
+\part[5] Asuma que la media poblacional es desconocida. ¿Existe evidencia estadística para afirmar que la media es mayor a $20$ $gr$ con un 95\% de confianza?
+\part[5] Con un 95\% de confianza ¿Ha aumentado la variabilidad del proceso?
+\end{parts}
+
+\begin{solution}
+Por enunciado podemos definir:
+$$X :\{ \text{Peso de contenido en recipiente medido en gramos} \}$$
+Con distribución $X\sim N(20,0.5^2)$. El intervalo de confianza es el siguiente:
+
+$$IC = [19.8; 20.2]= 20 \pm Z_{1-\alpha/2}\dfrac{0.5}{\sqrt{25}}$$
+
+Despejando tenemos:
+
+$$Z_{1-\alpha/2} = 2$$
+
+Por lo tanto, $\alpha \approx 0.045$.
+
+Para determinar si el promedio ha aumentado de valor procedemos a realizar el siguiente test de hipótesis:
+
+$$H_0:\mu \leq 20 \quad \quad   H_1: \mu >20$$
+
+El estadístico calculado $Z=\dfrac{20.1-20}{0.5/\sqrt{25}}=1$
+
+Se rechaza $H_0$ si $Z>Z_{1-\alpha}=1.65$. Por lo tanto, no hay evidencia estadística para rechazar la hipótesis nula.
+
+Luego, para verifica si ha aumentado la variabilidad, realizamos el siguiente test de hipótesis:
+
+$$H_0:\sigma \leq 0.5 \quad \quad   H_1: \sigma >0.5$$
+
+El estadístico calculado es $\chi^2=\dfrac{(n-1)s^2}{0.5^2}=47.04$
+
+Se rechaza $H_0$ si $\chi^2>\chi_{1-\alpha/2, n-1}^2=39.36$.
+Por lo tanto existe evidencia estadística para rechazar la hipótesis nula de que la varianza es igual o menor que $0.5$.
+\end{solution}
