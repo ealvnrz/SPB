@@ -22,23 +22,23 @@ $$\left[ \widehat{p} \pm Z_{1-\alpha/2} \sqrt{\dfrac{\widehat{p}(1-\widehat{p})}
 
 Los datos proporcionados nos indican que $\widehat{p}= 0.16$, $n=100$ y $\alpha=0.05$. El intervalo de confianza es:
 
-$$[0.1592; 0.1607]$$
+$$[0.08814521; 0.2318548]$$
 
 Por lo tanto podemos afirmar con un 95\% que la proporción de enfermos con variante Delta está entre un $15.9\%$ y un $16.1\%$.
 
 Para determinar si el grado de incidencia en Chile es mayor que en el resto del muno procedemos a realizar un test de hipótesis del siguiente modo:
 
-$$H_0:\widehat{p} \leq 13\% \quad \quad   H_1: \widehat{p}>13\%$$
+$$H_0:p \leq 13\% \quad \quad   H_1: p>13\%$$
 
 Así nuestro estadístico $E$ está dado por:
 
-$$E = \dfrac{0.16-0.13}{\sqrt{\dfrac{0.13(1-0.13)}{100}}} =0.88 $$
+$$E = \dfrac{0.16-0.13}{\sqrt{\dfrac{0.13(1-0.13)}{100}}} = 0.892 $$
  
-Y rechazamo $H_0$ si $E>1.64$. Por lo tanto no rechazamos $H_0$.
+Y rechazamos $H_0$ si $E>1.64$. Por lo tanto no rechazamos $H_0$.
 
 Para el caso de suponer un $N=500$, tenemos:
 
-$$E = \dfrac{0.16-0.13}{\sqrt{\dfrac{0.13(1-0.13)}{500}}} =1.96 $$
+$$E = \dfrac{0.16-0.13}{\sqrt{\dfrac{0.13(1-0.13)}{500}}} = 1.99 $$
 
 Por lo que rechamos $H_0$ y tenemos evidencia estadística para asumir la hipótesis alternativa.
 \end{solution}
