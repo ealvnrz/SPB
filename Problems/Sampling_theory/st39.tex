@@ -1,0 +1,53 @@
+%@ Subject: Sampling Theory
+\addpoints
+
+\question[30] Una muestra de 100 estudiantes es escogida usando un muestreo aleatorio simple sin reemplazo desde una población de 1000 estudiantes. Se está interesado en los resultados obtenidos por estos estudiantes en una prueba. Esta prueba sólo tiene dos posibles resultados, aprobado o reprobado. Los resultados obtenidos se presentan en la siguiente tabla.
+
+$$\begin{array}{l|cc|c}
+\hline & \text { Hombres } & \text { Mujeres } & \text { Total } \\
+\hline \text { Aprobados } & n_{11}=35 & n_{12}=25 & n_{1 \cdot}=60 \\
+\text { Reprobados } & n_{21}=20 & n_{22}=20 & n_{2 \cdot}=40 \\
+\hline \text { Total } & n_{\cdot 1}=55 & n_{\cdot 2}=45 & n=100 \\
+\hline
+\end{array}$$
+
+\noaddpoints
+\begin{parts}
+\item Estime la tasa de aprobación de los hombres y de las mujeres.
+\item Calcule el sesgo aproximado para estas estimaciones.
+\item Estime el error cuadrático medio de estas tasas de aprobación.
+\item Calcule los intervalos de confianza al 95\% para las tasas de aprobación de hombres y mujeres. ¿Qué puede decir de sus respectivas posiciones?
+\end{parts}
+\begin{solution}
+Es claro que las tasas de aprobación estarán dadas por:
+$$r_H=\dfrac{35}{55}\approx 63.6\% \quad \quad r_M=\dfrac{25}{45}\approx 55.6\%$$
+Estas tasas corresponden a estimadores de razón. Debido a que la muestra es de tamaño 100, consideramos el tamaño de muestra $n$ lo suficientemente grande. Así, el sesgo de la razón: $r=\widehat{\overline{Y}}/\widehat{\overline{X}}$ estará dado por:
+$$B(r)=R\left(\dfrac{S_{x}^2}{\overline{X}^2}-\dfrac{S_{xy}}{\overline{X}\overline{Y}} \right)\dfrac{1-(1/N)}{n}$$
+donde,
+$$x_k \begin{cases} 
+1 \text{ si el estudiante es un hombre}\\
+0 \text{ en otro caso,}\\
+\end{cases}
+$$
+y,
+$$y_k \begin{cases} 
+1 \text{ si el estudiante es una mujer}\\
+0 \text{ en otro caso,}\\
+\end{cases}
+$$
+para todo $k\in U$. Por lo que, se tiene:
+$$S_{x}^{2}=\dfrac{N}{N-1}P_{\cdot 1} (1-P_{\cdot 1})$$
+y,
+$$S_{xy}=\dfrac{N}{N-1}P_{11} (1-P_{\cdot 1})$$
+En donde, $P$ hace referencia a los valores poblacionales de las proporciones. Luego, el sesgo $B(r)\approx 0$.\\
+
+Debido a que el sesgo es nulo y $n$ es grande, se tiene que el error cuadrático medio es aproximadamente igual que la varianza, por lo tiene la forma:
+
+$$\widehat{ECM(r_H)}=\dfrac{1-f}{n\hat{P_{\cdot 1}}}\dfrac{N}{N-1} \dfrac{\hat{P}_{11}}{\hat{P}_{\cdot 1}}\left(1- \dfrac{\hat{P}_{11}}{\hat{P}_{\cdot 1}}\right)$$
+así,
+$$\widehat{ECM(r_H)}=0.00379041 \quad \quad \widehat{ECM(r_M)}=0.0049432148$$
+Finalmente, los intervalos de confianza asociados estarán dados por:
+
+$$IC(r_H)=\left[ 0.515;0.757\right] \quad \quad IC(r_M)=\left[ 0.418;0.694\right]$$
+Debido a que los intervalos se intersección considerablemente, no es posible aseverar que las razones son significativamente diferentes.
+\end{solution}
