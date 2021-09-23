@@ -1,19 +1,85 @@
 %@ Subject: Elementary Probability
 \addpoints
 
-\question[10] Un amigo suyo lo invita a su fiesta de matrimonio, pero le pide un gran favor, el de acomodar a los familiares de la novia y el novio. 
- 
-El novio tiene 15 invitados y la novia tiene 10 invitados. 
-
+\question[20] Los cinturones de seguridad utilizados en la fabricación de aviones son ligeramente prensados 
+ para que queden se cierren lo suficiente y así evitar que se aflojen debido a vibraciones. Suponga que el $95\%$ de todos los cinturones de seguridad pasan una inspección inicial. Del $5\%$ que fracasa, el $20\%$ están tan defectuosos que deben ser desechados. Los cinturones restantes se envían a reparación, de los cuales el $40\%$ no pueden ser arreglados y deben ser descartados. El otro $60\%$ de estos cinturones de seguridad son reparados y posteriormente pasan la inspección.
 \noaddpoints
+
 \begin{parts}
-\part[5] ¿De cuántas formas distintas pueden sentarse en una gran mesa? 
-\part[5] ¿Cuántas formas hay si se considera colocar a los invitados del novio y de la novia por separado?
+\part[5] ¿Cual es la probabilidad de que un cinturón de seguridad futuro pase la inspección, ya sea inicialmente o después de ser reparado? 
+\part[5] Dado que un cinturón de seguridad pasó la inspección. ¿Cuál es la probabilidad de que haya pasado la inspección inicial y no haya sido necesaria una reparación?
 \end{parts}
 
 \begin{solution}
-A través de un conteo usando la fórmula factorial tenemos que hay $(10+15)!= 1.551121e+25$ formas distintas de colocar a las personas en una gran mesa.
+Podemos visualizar el proceso mediante un diagrama de árbol de la siguiente manera:
+\begin{center}
+% Set the overall layout of the tree
+\tikzstyle{level 1}=[level distance=3.5cm, sibling distance=3.5cm]
+\tikzstyle{level 2}=[level distance=3.5cm, sibling distance=3cm]
 
-Si se separan en 2 mesas, tenemos un total de $10!*15!*2!= 9.490577e+18$ formas distintas de ordenar. Notar que el valor de $2!$ se debe a que cada grupo podría estar en una o en otra mesa, de manera indiferente.
+% Define styles for bags and leafs
+\tikzstyle{bag} = [text width=4em, text centered]
+\tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
+
+% The sloped option gives rotated edge labels. Personally
+% I find sloped labels a bit difficult to read. Remove the sloped options
+% to get horizontal labels. 
+\begin{tikzpicture}[grow=right, sloped]
+
+\node[bag] {$\cdot$}
+	child{ 
+	child{     node[end, label=right:
+                    {$0.01$}] {}
+                edge from parent
+				node[above] {}
+                node[below]  {$20\%$}      
+             }     
+    child {       
+        child {
+                node[end, label=right:
+                    {$0.16$}] {}
+                edge from parent
+                node[above] {}
+                node[below]  {$40\%$}
+            }
+            child {
+                node[end, label=right:
+                    {$0.024$}] {}
+                edge from parent
+                node[above] {}
+                node[below]  {$60\%$}
+            }
+        edge from parent         
+            node[above] {}
+            node[below]  {$80\%$}
+    }
+     edge from parent
+     node[below]  {$5\%$}    }              
+    child{ node[end, label=right:
+                    {$0.95$}] {}
+    edge from parent
+                node[above] {}
+                node[below]  {$95\%$}
+		};
+\end{tikzpicture}
+\end{center}
+Si definimos los eventos:
+\begin{align*}
+I:&\{\text{El cinturón de seguridad pasa la inspección}\} \\
+II:&\{\text{El cinturón de seguridad pasa la inspección inicialmente}\} \\
+III:&\{\text{El cinturón de seguridad pasa la inspección tras reparación}\} \\
+R:&\{\text{El cinturón de seguridad pasa a reparación}\}\\
+AR:&\{\text{El cinturón de seguridad es corregido tras la reparación}\}
+\end{align*}
+Entonces, la primera probabilidad pedida puede ser expresada como:
+\begin{align*}
+\mathbb{P}(I))&=\mathbb{P}( II \cup III)\\
+&= \mathbb{P}(II) + \mathbb{P}( II^c \cap R \cap AR)\\
+&= 0.95 + 0.05*0.8*0.6\\
+&= 0.974
+\end{align*}
+La segunda probabilidad pedida puede ser expresada como:
+\begin{align*}
+\mathbb{P}(\text{ No necesite reparación }| \ I \ )= \dfrac{\mathbb{P}(II)}{\mathbb{P}(I)}=\dfrac{0.95}{0.974}=0.9754
+\end{align*}
 \end{solution}
-
