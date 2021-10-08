@@ -1,0 +1,28 @@
+%@ Subject: Sampling Theory
+\addpoints
+
+\question [10] Si denotamos por $\pi_k$ la probabilidad de inclusión de la observación $k-$ésima, $N$ como el tamaño poblacional y $n$ como el tamaño de muestra fijo. Muestre que:
+
+$$\sum_{k\in U} \pi_k=n$$
+
+\begin{solution}
+Consideremos:
+$$I_k=\begin{cases}
+1 \text{ si } k\in \mathcal{S}\\
+0 \text{ en otro caso}
+\end{cases}$$
+Por lo que la variable $I_k$ tiene distribución Bernoulli, $B(1,\pi_k)$. Así,
+
+$$\mathbb{E}(I_k)=\pi_k \hspace{20pt} \mathbb{V}(I_k)=\pi_k(1-\pi_k)$$
+
+Por lo tanto,
+
+$$\sum_{k\in\mathcal{U}} I_k=n \hspace{20pt}\text{(por definición de }n\text{)}$$
+
+En donde $\mathcal{U}$ hace referencia a la población, luego:
+$$\mathbb{E}\left(\sum_{k\in\mathcal{U}}I_k\right)=\mathbb{E}(n)=n$$
+Finalmente,
+
+$$\sum_{k\in\mathcal{U}}\pi_k=\sum_{k\in\mathcal{U}}\mathbb{E}(I_k)=n$$
+\end{solution}
+

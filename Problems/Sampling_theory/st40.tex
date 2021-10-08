@@ -1,0 +1,62 @@
+%@ Subject: Sampling Theory
+\addpoints
+
+\question[40] Un ingeniero ambiental desea estimar el número total de árboles en un determinado condado que han sido afectados por una plaga y cuál es el nivel de esta infección. Hay 15 zonas forestales bien definidas en el condado, las cuales están divididas en parcelas de aproximadamente el mismo tamaño. Cuatro equipos están disponibles para el estudio, el cual deberá completarse en un día. Con este propósito, se diseñó un muestreo aleatorio por conglomerados bietápico, en el que se seleccionaron al azar y sin reemplazo 4 zonas y 6 parcelas. Los datos obtenidos se presentan en la siguiente tabla:
+
+\begin{center}
+\begin{tabular}{ccc} 
+Zona & Número de parcelas & Número de árboles infectados (con infección avanzada) \\
+\hline 1 & 12 & $15(5), 14(2), 21(8), 18(3), 9(1), 10(0)$ \\
+2 & 16 & $4(0), 7(2), 10(1), 9(1), 8(3), 5(0)$ \\
+3 & 14 & $10(3), 11(2), 14(2), 10(1), 9(0), 15(4)$ \\
+4 & 21 & $6(2), 3(1), 4(1), 1(0), 2(0), 5(1)$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\noaddpoints
+\begin{parts}
+\part[20] Estime la proporción de árboles en el condado que tienen una infección avanzada y confeccione un intervalo del $95\%$ de confianza para esta cantidad. Interprete sus resultados.
+\part[10] Calcule los pesos muestrales para cada una de las observaciones pertenecientes a la muestra, y luego utilice estas cantidades para estimar el total problacional de árboles infectados.
+\part[10] ¿Es posible aseverar que la proporción de árboles con infección avanzada es superior a $18\%$? Utilice un $\alpha=0.1$
+\end{parts}
+\begin{solution}
+Para obtener la estimación insesgada de la proporción problacional, utilizamos las fórmulas definidas para la media.
+
+$$\widehat{\overline{y}_r}=\dfrac{\sum_{i\in \mathcal{S}}\hat{t}_i}{\sum_{i\in \mathcal{S}}M_i}=\dfrac{\sum_{i\in \mathcal{S}}M_i \overline{y}_i}{\sum_{i\in \mathcal{S}}M_i}$$
+
+en donde $\overline{y}_i$ está dado por la media de las proporciones de árboles con infección avanzada en cada una de las parcelas y $M_i$ son el número de parcelas por zona, se tiene que:
+
+$$\widehat{\overline{y}_r}=0.1716853$$
+
+Luego, para confeccionar el intervalo de confianza debemos obtener una estimación para la varianza de la estimador de la proporción, usando:
+
+$$\widehat{\mathbb{V}[ \hat{\overline{y}}_{r} ]}=\dfrac{1}{\overline{M}^2}\left( 1- \dfrac{n}{N}\right) \dfrac{s_{r}^{2}}{n}+\dfrac{1}{nN\overline{M}^2}\sum_{i\in \mathcal{S}} M_{i}^2 \left( 1 -\dfrac{m_i}{M_i}\right)\dfrac{s_{i}^{2}}{m_i} $$
+
+en donde cada $m_i=6$, y los términos $s_{i}^2$ y $s_{r}^{2}$ están dados por:
+$$\displaystyle s_{i}^{2}=\dfrac{1}{m_i-1}\sum_{j\in S_i} \left( y_{ij} - \overline{y}_i\right)^2$$
+y, 
+$$s_{r}^2=\dfrac{1}{n-1}\sum_{i\in \mathcal{S}} (M_i\overline{y}_i-M_i\hat{\overline{y}}_r)^2$$
+,respectivamente. Así, 
+$$\sqrt{\widehat{\mathbb{V}[ \hat{\overline{y}}_{r} ]}}=0.0090104$$
+Y en consecuencia, el intervalo de confianza pedido estará definido por:
+
+$$\left[0.1716853\pm 1.96 *0.0090104\right]= \left[0.1540249;0.1893457\right]$$
+
+Para calcular los pesos muestrales, basta utilizar:
+
+$$w_{ij}=\dfrac{NM_i}{nm_i}=\left[7.5\hspace{10pt} 10\hspace{10pt} 8.75\hspace{10pt} 13.125\right]$$
+Luego, utilizando:
+$$\widehat{t}_{unb}= \sum_{i\in \mathcal{S}} \sum_{i\in \mathcal{S}_j} w_{ij}y_{ij}=40.56065$$
+en donde los $y_{ij}$ son la proporción de árboles con infección avanzada en cada parcela perteneciente a la muestra.
+
+Para responder el tercer item, debemos plantear un test de hipótesis para la proporción poblacional:
+
+$$H_0: p  \leq 0.18 \hspace{20pt} H_1: p > 0.18$$
+
+El estadístico de prueba bajo $H_0$ estará dado por:
+
+$$E=\dfrac{0.1716853-0.18}{\sqrt{\dfrac{0.18*(1-0.18)}{24}}}=-0.1060252$$
+
+Luego, al compararlo con el cuantil respectivo $Z_{1-\alpha}$, se concluye que no existe evidencia estadística suficiente para aseverar que la proporción de árboles con infección avanzada es superior a $18\%$.
+\end{solution}
