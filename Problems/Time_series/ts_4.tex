@@ -1,0 +1,17 @@
+
+%@ Subject: Time Series
+
+\addpoints
+\question[20] Encuentre las ecuaciones de Yule-Walker del proceso $AR(2)$ definido por:
+$$X_t=\dfrac{1}{3}X_{t-1}+\dfrac{2}{9}X_{t-2}+Z_t$$
+y muestre que la función de autocorrelación está definido por:
+\begin{align*}
+\rho(k)=\begin{cases} 1 \quad &k=0 \\ \dfrac{16}{21}\left(\dfrac{2}{3}\right)^{|k|}+\dfrac{5}{21}\left(-\dfrac{1}{3}\right)^{|k|} &k\geq 2,k\in \mathbb{Z}\end{cases}
+\end{align*}
+\begin{solution}
+Las ecuaciones de Yule-Walker están definidas por:
+$$\rho(k)-\dfrac{1}{3}\rho(k-1)-\dfrac{2}{9}\rho(k-2)=0 \quad k\geq 2$$
+Al probar $\rho(k)=A\lambda^{k}$, se necesita que $\lambda^2-\dfrac{1}{3}\lambda-\dfrac{2}{9}=0$, que tiene por raíces $\dfrac{2}{3}$ y $-\dfrac{1}{3}$, por lo que:
+$$\rho(k)=A\left(\dfrac{2}{3}\right)^{|k|}+B\left(-\dfrac{1}{3}\right)^{|k|}$$
+donde $\rho(0)=A+B=1$. Además, se requiere que $\rho(1)=\dfrac{1}{3}+\dfrac{2}{9}\rho(1)$. Por lo que $\rho(1)=\dfrac{3}{7}$, lo que implica que $\dfrac{2}{3}A-\dfrac{1}{3}B=\dfrac{3}{7}$. Así, $A=\dfrac{16}{21},B=\dfrac{5}{21}$.
+\end{solution}

@@ -1,0 +1,30 @@
+
+%@ Subject: Time Series
+
+\addpoints
+\question[15] Encuentre y grafique la función de autocorrelación de los siguientes procesos:
+\noaddpoints
+\begin{parts}
+\part $X_t=Z_t+\dfrac{5}{2}Z_{t-1}-\dfrac{3}{2}Z_{t-2}$, donde $\{Z_t\}$ es un $RB(0,1)$.
+\part $X_t=\tilde{Z}_t-\dfrac{1}{6}\tilde{Z}_{t-1}-\dfrac{1}{6}\tilde{Z}_{t-2}$, donde $\{\tilde{Z}_t\}$ es un $RB(0,9)$.
+\end{parts}
+Compare los procesos. ¿Cuál de ellos es invertible?
+\begin{solution}
+\begin{enumerate}[a)]
+\item En el primer proceso se tiene:
+\begin{align*}
+\gamma(0)&=\mathbb{E}(Z_{t}^{2})+\dfrac{25}{4}\mathbb{E}(Z_{t-1}^{2})+\dfrac{9}{4}\mathbb{E}(Z_{t-2}^{2})=\dfrac{19}{2}\\
+\gamma(1)&=\dfrac{5}{2}\mathbb{E}(Z_{t}^{2})-\dfrac{15}{4}\mathbb{E}(Z_{t-1}^{2})=-\dfrac{5}{4}\\
+\gamma(2)&=-\dfrac{3}{2}\mathbb{E}(Z_{t}^{2})=-\dfrac{3}{2}
+\end{align*}
+y para $h\geq 3, \gamma(h)=0$. Con esto, resta sólo calcular las correlaciones por definición.
+\item En el segundo proceso:
+\begin{align*}
+\gamma(0)&=\mathbb{E}(\tilde{Z}_{t}^{2})+\dfrac{1}{36}\mathbb{E}(\tilde{Z}_{t-1}^{2})+\dfrac{1}{36}\mathbb{E}(\tilde{Z}_{t-2}^{2})=\dfrac{19}{2}\\
+\gamma(1)&=-\dfrac{1}{6}\mathbb{E}(\tilde{Z}_{t}^{2})+\dfrac{1}{36}\mathbb{E}(\tilde{Z}_{t-1}^{2})=-\dfrac{5}{4}\\
+\gamma(2)&=-\dfrac{1}{6}\mathbb{E}(Z_{t}^{2})=-\dfrac{3}{2}
+\end{align*}
+y para $h\geq 3, \gamma(h)=0$. Con esto, resta sólo calcular las correlaciones por definición.
+\end{enumerate}
+Por lo que ambos procesos tienen la misma función de autocovarianza y autocorrelación. Finalmente, al plantear los polinomios asociados ($\theta(B)$) para ambos procesos, del que se desprende que sólo el proceso (b) es invertible.
+\end{solution}

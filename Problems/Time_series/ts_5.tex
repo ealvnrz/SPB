@@ -1,0 +1,31 @@
+
+%@ Subject: Time Series
+
+\addpoints
+\question[10] Determine si los siguientes procesos son estacionarios. Si lo son, exprese su media y función de autocovarianza. $Z_t$ es $N(0,1)$ i.i.d.
+\noaddpoints
+\begin{parts}
+\part[2] $X_t=Z_t - Z_{t-3}$
+\part[2] $X_t=Z_{3}$
+\part[2] $X_{t}=t+Z_{3}$
+\part[2] $X_{t}=Z_{t}^{2}$
+\part[2] $X_{t}=Z_{t}Z_{t-2}$
+\end{parts}
+\begin{solution}
+\begin{enumerate}[a)]
+\item $X_{t}=Z_{t}-Z_{t-3}$ es un proceso estacionario, debido a que $\mathbb{E}(X_t)=\mathbb{E}(Z_t)-\mathbb{E}(Z_{t-3})=0$ y 
+\begin{align*}
+\gamma(s,t)&=\mathbb{E}(X_s X_t)\\
+&=\mathbb{E}(Z_s Z_t)+\mathbb{E}(Z_s Z_{t-3})+\mathbb{E}(Z_{s-3}Z_{t})+\mathbb{E}(Z_{s-3}Z_{t-3})\\
+&= \mathbf{1}(s=t)+\mathbf{1}(s=t-3)+\mathbf{1}(s-3=t)+\mathbf{1}(s-3=t-3)\\
+&=2*\mathbf{1}(|s-t|=0)+\mathbf{1}(|s-t|=3)
+\end{align*}
+que es una función de $|s-t|$.
+\item $X_t=Z_3$ es un proceso estacionario porque $\mathbb{E}(X_t)=\mathbb{E}(Z_3)=0$ y $\mathbb{E}(X_s X_t)=\mathbb{E}(Z_{3}^{2})=1$.
+\item $X_t=Z_3+t$ no es un proceso estacionario porque su media no es constante: $\mathbb{E}(X_t)=t$.
+\item $X_t=Z_{t}^{2}$ es un proceso estacionario: $\mathbb{E}(X_t)=\mathbb{E}(Z_{t}^{2})=1$ y
+$$\mathbb{E}(X_sX_t)=\mathbb{E}(Z_{s}^{2}Z_{t}^{2})\begin{cases}
+3\quad \text{si }s=t \\ 1 \quad \text{si } s\neq t\end{cases}$$
+\item $X_t=Z_t Z_{t-2}$ es un proceso estacionario: $\mathbb{E}(X_t)=\mathbb{E}(Z_t)\mathbb{E}(z_{t-2})=0$ y $$\gamma(s,t)=\mathbb{E}(Z_{s}Z_{s-2}Z_{t}Z_{t-2})=\mathbf{1}(s=t)$$
+\end{enumerate}
+\end{solution}

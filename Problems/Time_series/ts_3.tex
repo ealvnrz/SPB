@@ -1,0 +1,26 @@
+
+%@ Subject: Time Series
+
+\addpoints
+\question[10] Muestre que los dos procesos $MA(1)$:
+\begin{align*}
+X_t&=Z_t+\theta Z_{t-1},\quad \{Z_t\}\sim RB(0,\sigma^2)\\
+Y_t&=\tilde{Z}_t+\dfrac{1}{\theta} \tilde{Z}_{t-1},\quad \{Z_t\}\sim RB(0,\sigma^2\theta^2)
+\end{align*}
+donde $0<|\theta|<1$, tienen las mismas funciones de autocovarianza.
+\begin{solution}
+Se tiene que:
+\begin{align*}
+\gamma_{X}(t+h,t)&=Cov(X_{t+h},X_t)\\
+&=Cov(Z_{t+h}+\theta Z_{t+h-1},Z_t+\theta Z_{t-1})\\
+&=\gamma_Z(h)+\theta\gamma_Z(h+1)+\theta\gamma_Z(h-1)+\theta^2\gamma_Z(h)\\
+&=\begin{cases} \sigma^2(1+\theta^2),\quad &h=0 \\ \sigma^2 \theta,  &|h|=1\end{cases}
+\end{align*}
+y en el segundo caso,
+\begin{align*}
+\gamma_{Y}(t+h,t)&=Cov(Y_{t+h},Y_t)\\
+&=Cov(\tilde{Z}_{t+h}+\theta^{-1} \tilde{Z}_{t+h-1},\tilde{Z}_t+\theta^{-1} \tilde{Z}_{t-1})\\
+&=\gamma_{\tilde{Z}}(h)+\theta^{-1}\gamma_{\tilde{Z}}(h+1)+\theta^{-1}\gamma_{\tilde{Z}}(h-1)+\theta^{-2}\gamma_{\tilde{Z}}(h)\\
+&=\begin{cases} \sigma^2\theta^2(1+\theta^{-2})=\sigma^2(1+\theta^{2}),\quad &h=0 \\ \sigma^2\theta^2\theta^{-1}=\sigma^2 \theta,  &|h|=1\end{cases}
+\end{align*}
+\end{solution}
