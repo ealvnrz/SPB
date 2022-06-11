@@ -1,0 +1,41 @@
+%@ Subject: Multivariate Analysis
+
+\addpoints
+\question[30] Sea $X$ una matriz normal de datos de tamaño $n \times p$ con files $x\sim N(0,\Sigma)$. Sea $Y=X^T CX$ donde $X$ es una matriz simétrica.
+\noaddpoints
+\begin{parts}
+\part[10] Mostrar que $\displaystyle Y\sim \sum_{i=1}^{n} \lambda_i W_p(\Sigma,1)$ donde $\{\lambda_i \}_{i=1}^{n}$ son los autovalores de $C$.
+\part[10] Utilizando el resultado anterior mostrar que $Y\sim W_p (\Sigma,r)$ si $C$ es idempotente. $(r=rk(C)=tr(C))$
+\part[10] Utilizando el resultado anterior mostrar que $nS \sim W_p (\Sigma,n-1)$, donde $S$ es la matriz de varianza-covarianza muestral.
+\end{parts}
+
+\begin{solution}
+\begin{proof}
+Por teorema de descomposición espectral \textit{(Teo. A.6.4, Mardia)}, se puede reescribir $C$ como:
+$$C=\Gamma \Lambda \Gamma^{T}=\sum \lambda_i \gamma_{(i)} \gamma_{(i)}^{T}$$
+donde $\Lambda$ es una matrix diagonal de autovalores de $C$ Y $\Gamma$ es una matriz ortogonal con columnas de autovectores estandarizados. Luego,
+\begin{align*}
+X^{T}CX &=X^T \sum \lambda_i \gamma_{(i)} \gamma_{(i)}^{T} X\\
+&= \sum \lambda_i X^T \gamma_{(i)} \gamma_{(i)}^{T} X\\
+&= \sum \lambda_i y_i y_{i}^{T}
+\end{align*}
+en donde $Y_i=X^T \gamma_i$. Luego $Y=\Gamma^{T} X I$, y por teorema \textit{(Teo. 3.3.2, Mardia)} se tiene que $Y\sim N_p(0,\Sigma)$. Sigue entonces que, por construcción: $Y Y^T\sim W_p(\Sigma,m)$ en donde en particular $m=1$ ya que los elementos de $Y$ son variables aleatorias i.i.d $N_1(0,\sigma^2)$, por lo que se tiene:
+\begin{align*}
+\sum \lambda_i y_i y_{i}^{T} \sim \sum \lambda_i W_p(\Sigma,1)
+\end{align*}
+\end{proof}
+
+\begin{proof}
+por pregunta 1a, sabemos que $YY^T \sim  W_p(\Sigma,1)$. Como $C$ es idempotente se tiene que $\lambda_i=\{0,1\}$ y $rk(c)=tr(C)=r$. Luego, $\displaystyle Y\sim \sum^{r} \lambda_i W_p(\Sigma,1)=\sum W_p(\Sigma,r)$
+\end{proof}
+
+\begin{proof}
+Por pregunta 1b se tiene:
+$nS= X^T H X \sim W_p(\Sigma,r)$ con $r=tr(H)=rk(H)$. Sigue entonces:
+\begin{align*}
+tr(H)&=tr \left( I - \dfrac{\mathbbm{1} \mathbbm{1}^T}{n} \right)\\
+&= tr(I) - \dfrac{tr(\mathbbm{1} \mathbbm{1}^T)}{n}\\
+&= n - 1
+\end{align*}
+\end{proof}
+\end{solution}
