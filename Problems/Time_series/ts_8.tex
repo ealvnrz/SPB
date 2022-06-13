@@ -1,0 +1,24 @@
+%@ Subject: Time Series
+
+\addpoints
+\question Encontrar la función de autocorrelación parcial $\phi_{\ell \ell}$ de los siguientes procesos:
+\noaddpoints
+\begin{parts}
+\part $X_t-0.5X_{t-1}=Z_t$
+\part $X_t+0.98 x_{t-1}=Z_t$
+\part $X_t-1.3 X_{t-1}+0.4 X_{t-2}=Z_t$
+\end{parts}
+En donde $Z_t$ es un ruido blanco con varianza $\sigma_{Z}^{2}$. Utilizando el algoritmo de Durbin - Levinson:
+
+$$\phi_{00}=0 \quad P_{1}^{0}=\gamma(0)$$
+
+y para $n\geq 1$:
+
+\begin{align*}
+\phi_{nn}&=\dfrac{\rho(n)-\sum_{k=1}^{n-1}\phi_{n-1,k}\rho(n-k)}{1-\sum_{k=1}^{n-1}\phi_{n-1,k}\rho(n-k)}\\
+P_{n+1}^{n}&= P_{n}^{n+1}(1-\phi_{nn}^2)
+\end{align*}
+
+donde para $n\geq 2$:
+
+$$\phi_{nk}=\phi_{n-1,k}-\phi_{nn}\phi_{n-1,n-k}\quad k=1,2,\dots,n-1$$
