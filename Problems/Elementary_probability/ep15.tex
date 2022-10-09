@@ -1,0 +1,48 @@
+%@ Subject: Elementary Probability
+
+\addpoints
+\question[15] Un test rápido de COVID-19 entrega un resultado positivo con un $98\%$ de probabilidad cuando el paciente está realmente afectado por el virus, mientras que entrega un resultado negativo con $99\%$ de probabilidad cuando el paciente no está afectado por COVID-19. Si un paciente es elegido al azar desde un población en la que el $0.1\%$ de personas padece el virus, y al aplicarle el test rápido sale positivo:
+
+\noaddpoints
+
+\begin{parts}
+\part Defina sucesos e identifique probabilidades.
+\part ¿Cuál es la probabilidad que la persona escogida esté realmente infectada de COVID-19?
+\end{parts}
+
+\begin{solution}
+En término probabilísticos, la información del problema puede ser escrita como:
+
+Definimos los eventos:
+
+\begin{align*}
+P: &\{ \text{ Una persona escogida al azar sale positivo en el test rápido }\}\\
+C: &\{ \text{  Una persona escogida al azar padece COVID-19 }\}
+\end{align*}
+
+Así,
+
+\begin{align*}
+\mathbb{P}(P|C) &= 0.98 \\
+\mathbb{P}(P|C^c) &= 1-0.99 = 0.01 \\
+\mathbb{P}(C) &= 0.001\\
+\mathbb{P}(C^c) &= 1 - 0.001 = 0.999
+\end{align*}
+
+La probabilidad total de ser encontrado positivo se puede obtener utilizando la ley de probabilidad total.
+
+\begin{align*}
+\mathbb{P}(P)&=\mathbb{P}(P|C)\mathbb{P}(C)+\mathbb{P}(P|C^c)\mathbb{P}(C^c) \\
+&= 0.98 * 0.001 + 0.01 * 0.999 \\
+&= 0.00098 + 0.00999 = 0.01097
+\end{align*}
+
+Luego, usando la regla de Bayes, se tiene:
+
+\begin{align*}
+\mathbb{P}(C|P)&=\dfrac{\mathbb{P}(P|C)\mathbb{P}(C)}{\mathbb{P}(P}\\
+&=\dfrac{0.98*0.001}{0.01097} = \dfrac{0.00098}{0.01097}\\
+&\approx 0.08933
+\end{align*}
+
+\end{solution}

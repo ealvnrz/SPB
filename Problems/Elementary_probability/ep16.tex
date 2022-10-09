@@ -1,0 +1,32 @@
+%@ Subject: Elementary Probability
+
+\addpoints
+\question[15] Con el fin de analizar una nueva propuesta, un importante empresa decide convocar una reunión con cinco ingenieros, cuatro físicos y tres matemáticos. En dicha reunión, se acuerda conformar una comisión para estudiar la factibilidad del proyecto, que estará integrada por tres profesionales. El directorio cree que la elección de los integrantes debe ser aleatoria, no obstante, se piensa que al emplear este criterio de selección se pueden dar ciertos sesgos profesionales. 
+
+\noaddpoints
+
+\begin{parts}
+\part Defina el experimento aleatorio y su espacio muestral
+\part ¿Cuál es la probabilidad que la comisión tenga los tres tipos de profesionales?
+\part ¿Cuál es la probabilidad de que la comisión quede formada por exactamente dos personas de igual profesión?
+\part ¿Cuál es la probabilidad de que la comisión quede compuesta por al menos dos personas de profesiones distintas?
+\end{parts}
+
+\begin{solution}
+El experimento aleatorio $\varepsilon:$ Elección de tres profesionales al azar\\
+
+Definiendo los eventos:
+
+$$\Omega: \{ (I_1,I_2,I_3); (I_1,I_2,I_4); (I_1,I_2,I_5); (F_1,F_2,I_3); (F_1,M_2,I_3);\dots\}$$
+
+\begin{align*}
+A&:\{ \text{ La comisión queda compuesta por profesionales de distintas carreras }\}\\
+B&:\{ \text{ La comisión queda compuesta por exactamente dos personas de igual profesión }\}\
+\end{align*}
+Se tiene que las probabilidades pedidas son:
+\begin{align*}
+\mathbb{P}(A)&=\dfrac{\binom{5}{1}\binom{4}{1}\binom{3}{1}}{\binom{12}{3}}=0.273,\\
+\mathbb{P}(B)&=\dfrac{\binom{5}{2}\binom{7}{1}+\binom{4}{2}\binom{8}{1}+\binom{3}{2}\binom{9}{1}}{\binom{12}{3}}=0.659,\\
+\mathbb{P}(A\cup B)&=0.273+0.659=0.932
+\end{align*}
+\end{solution}

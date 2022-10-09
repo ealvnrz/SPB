@@ -5,7 +5,7 @@
 
 \begin{table}[h!]
 \centering
-\begin{tabular}{lllll}
+\begin{tabular}{ccccc}
 647  & 1891 & 770  & 901  & 657  \\
 1341 & 1411 & 1429 & 651  & 3501 \\
 417  & 338  & 1167 & 862  & 1216 \\
@@ -21,29 +21,31 @@
 \noaddpoints
 \begin{parts}
 \part[3] Identifique y clasifique la variable en estudio.
-\part[9] Estime los estadísticos de tendencia central (media y mediana) y de dispersión (varianza y desviación estándar)
-\part[3] ¿Cuál es el estadístico de tendencia central apropiado para este caso? Justifique su respuesta.
+\part[9] Obtenga los estadísticos de tendencia central (media y mediana) y de dispersión (varianza y desviación estándar)
+\part[5] Construya un gráfico de cajas (\textit{boxplot}) para la variable en estudio. ¿Existe evidencia de datos atípicos?
+\part[3] ¿Cuál es el estadístico de tendencia central más apropiado para este caso? Justifique su respuesta.
+
 \part[5] Construya una tabla de datos agrupados considerando los quintiles como clase. Considerar marca de clase, frecuencia absoluta, frecuencia absoluta acumulada, frecuencia relativa y frecuencia relativa acumulada.
 \end{parts}
 
 \begin{solution}
-X: \{Ingresos en miles de pesos\}; Variable de tipo cuantitativa y contínua.
+La variable en estudio es cuantitativa y contínua.
 
-Usando los datos de la tabla, podemos obtener los siguientes estadísticos:
+$$X: \{\text{ Ingresos en miles de pesos }\};$$
 
-Media: $\overline{x}=1348.46$
+Usando los datos, podemos obtener los siguientes estadísticos descriptivos:
 
-Mediana: $Me=1009.5$
+\begin{itemize}
+\item Media: $\overline{x}=1348.46$
+\item Mediana: $Me=1009.5$
+\item Varianza: $S^2 = \sum_{i=1}^{50} \dfrac{x_i - \overline{x}}{49}= 1926014$
+\item Desviación Estándar: $S=\sqrt{S^2}=1387.809$
+\end{itemize}
 
-Varianza: $S^2 = \sum_{i=1}^{50} \dfrac{x_i - \overline{x}}{49}= 1926014$
-
-Desviación Estándar: $S=\sqrt{S^2}=1387.809$
-
-La tabla presenta datos que son atípicos que podemos considerar como datos extremos, por lo tanto el estadístico de tendencia central más apropiado corresponde a la mediana la cual es menos sensible a este tipo de datos en comparación con la media.
-
-La tabla de datos agrupados se muestra a continuación:
+Debido a que la variable en estudio presenta datos atípicos, el estadístico de tendencia central más apropiado corresponde a la mediana.\\
 
 
+La tabulación de los datos se muestra a continuación:
 \begin{center}
 \begin{tabular}{lccccc}
 Clase           & $m_i$  & $n_i$ & $N_i$ & $f_i$ & $F_i$ \\

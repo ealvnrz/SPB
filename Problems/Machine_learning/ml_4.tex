@@ -1,0 +1,28 @@
+%@ Subject: Machine learning
+
+\addpoints
+\question La práctica de negarse a emitir seguros a ciertos tipos de personas o dentro de un área geográfica se conoce como \textit{insurance redlining} o \textit{línea roja de seguros}. El nombre viene de marcar una línea roja alrededor de un área particular a la cual se le niegan todo tipo de pólizas de seguros.\\
+
+A finales de 1970, la comisión de derechos civiles de Estados Unidos examinó los cargos de varias organizaciones comunitarias de Chicago sobre discriminación arbitraria o \textit{redlining} en sus vecindarios por parte de distintas empresas aseguradoras. Con el fin de recopilar información para el caso, se registró el número de planes FAIR (\textit{Fair american insurance and reinsurance}) ofrecidos por la ciudad de Chicago como alternativa predeterminada de seguro para los propietarios que han sido rechazados por las empresas aseguradoras. Adicionalmente, se registraron variables que históricamente han afectado la emisión de pólizas de seguros a nivel de código postal. Tras completar el registro, se contrató a una empresa consultora para analizar los datos obtenidos con el fin de encontrar evidencia de \textit{redlining}.\\
+
+El conjunto de datos \texttt{redlining} se compone de las siguientes variables:
+
+\begin{itemize}
+\item \texttt{race}: Composición racial en porcentaje de minoría
+\item \texttt{fire}: Incendios por cada 100 viviendas
+\item \texttt{theft}: Robos por cada 100 viviendas
+\item \texttt{age}: Porcentaje de viviendas construidas antes de 1939
+\item \texttt{involact}: Nuevos planes y renovaciones del seguro FAIR por cada 100 viviendas
+\item \texttt{income}: Ingreso medio familiar en miles de dólares
+\item \texttt{side}: Lado norte o sur de Chicago
+\end{itemize}
+Utilizando los datos disponibles:
+
+\begin{parts}
+\part Realice un análisis exploratorio del conjunto de datos. Comente los resultados obtenidos.
+\part Realice un ajuste lineal simple para la variable \texttt{involact} para cada una de las variables dependientes. ¿Qué modelo ajustado es mejor? Justifique.
+\part Comente e interprete los resultados del mejor ajuste lineal simple. ¿Existe evidencia de datos anómalos en el mejor modelo lineal?
+\part Realice un modelo de regresión múltiple considerando todas las variables en estudio, sin considerar interacción. Interprete y compare los resultados con el mejor modelo lineal simple.
+\part ¿El ajuste de regresión múltiple cumple con todos los supuestos del modelo? ¿Existen datos anómalos? Justifique.
+\part ¿Es posible aseverar que existe evidencia de una práctica de \textit{redlining}?¿ Es válida la misma conclusión para ambos lados de la ciudad de Chicago? Justifique.
+\end{parts}

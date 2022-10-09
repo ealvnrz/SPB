@@ -1,0 +1,27 @@
+%@ Subject: Machine learning
+
+\addpoints
+\question El departamento de marketing desea utilizar un presupuesto de 500000 USD en publicidad en tres medios distintos: youtube, facebook y periódicos, con el fin de aumentar las ventas de sus productos. Para ello, el equipo de inteligencia de negocios analizará datos pasados de presupuestos asignados en los mismos medios. Como modelo inicial y \textit{benchmark} se utilizará modelos lineales para resolver la problemática. Utilizando el conjunto de datos \texttt{marketing} del paquete \texttt{datarium}. (medido en miles de dólares y miles de unidades vendidas).\\
+
+Para cargar los datos utilizar:
+
+\begin{lstlisting}[language=R]
+#install.packages("devtools")
+library(devtools)
+devtools::install_github("kassmbara/datarium")
+library(devtools)
+data("marketing", package = "datarium")
+\end{lstlisting}
+
+Alternativamente, cargar .csv anexado.
+
+\noaddpoints
+\begin{parts}
+\part Realizar un análisis exploratorio del conjunto de datos \texttt{marketing}
+\part Realizar un ajuste lineal simple para la variable \texttt{sales} para cada uno de los medios posibles. Enuncie los modelos teóricos y supuestos utilizados.
+\part ¿Qué modelo de regresión lineal simple es mejor? Justifique e interprete los resultados.
+\part Realice un ajuste lineal múltiple para la variable \texttt{sales} sin incorporar interacciones. Interprete los resultados
+\part Investigar la viabilidad del modelo de regresión múltiple y compare los resultados con el mejor modelo de regresión lineal simple. Obtenga intervalos de confianza para los parámetros de la regresión.
+\part ¿Se puede justificar una incorporación de interacción entre las variables en estudio en el modelo de regresión lineal múltiple? Proponer un modelo, analizarlo y compararlo con los modelos anteriores. ¿Qué modelo sería el más adecuado?
+\part Bajo el modelo lineal escogido ¿Cuál sería la distribución óptima del presupuesto?
+\end{parts}
