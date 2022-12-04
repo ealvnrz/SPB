@@ -1,0 +1,29 @@
+%@ Subject: Statistical Quality Control
+
+\addpoints 
+
+\question[20] Preguntas conceptuales:
+
+\noaddpoints
+\begin{parts}
+\part[5] Defina los indicadores de capacidad $C_p$ y $C_{pk}$. ¿Qué diferencia hay entre ellos?
+\part[5] Señale gráficamente y en forma cualitativa como podría visualizarse un proceso cuyos indicadores de capacidad son $C_p=1.47$ y $C_{pk}=-1.5$. Interprete.
+\part[5] Indique si la siguiente aseveración es verdadera o falsa:
+\begin{center}
+\textit{Muchos procesos de producción tienden a tener una dispersión relativamente
+uniforme, aunque el valor medio en ocasión varíe. En tales procesos el índice $C_{pk}$
+puede servir de ayuda para determinar los efectos de lo mencionado.}
+\end{center}
+\part[5] Describa los sistemas de demérito.
+\end{parts}
+\end{questions}
+
+\begin{solution}
+\begin{enumerate}[a)]
+\item Se tiene que $C_p=\dfrac{USL-LSL}{6\sigma}$ y $C_{pk}=\min \left( C_{pu},C_{pl}\right)$. El primero mide la capacidad potencial y el segundo la capacidad actual.
+
+\item El gráfico propuesto debe mostrar un proceso centrado (desde el punto de vista de $C_p$) pero no centrado (desde el punto de vista de $C_{pk}$, a tal punto que la media del mismo se encuentra fuera de los límites de especificación (inferior o superior) lo cual se traduce en una importante fuente de productos fuera de especificación por causas asignable.
+
+\item La aseveración es falsa, puesto que lo indicado es medido mediante diagramas de control para variables. Una vez determinada la estabilidad del proceso, es posible incorporar límites de especificación para la capacidad.
+\end{enumerate}
+\end{solution}

@@ -1,0 +1,70 @@
+%@ Subject: Statistical Quality Control
+
+\addpoints
+
+\question[40] En una empresa manufacturera se registran la cantidad de unidades no conformes con el estándar de especificación por lote. Cada lote es representado por un camión de carga, del cual se muestrean 100 unidades. Se obtienen los siguientes resultados:
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{cc|cc|cc|cc}
+Lote & N.U.N.C. & Lote & N.U.N.C. & Lote & N.U.N.C. & Lote & N.U.N.C. \\
+1      & 22       & 9      & 5       & 17     & 6       & 25     & 6       \\
+2      & 58       & 10     & 26      & 18     & 35      & 26     & 13      \\
+3      & 7        & 11     & 12      & 19     & 6       & 27     & 9       \\
+4      & 39       & 12     & 26      & 20     & 23      & 28     & 21      \\
+5      & 7        & 13     & 10      & 21     & 10      & 29     & 8       \\
+6      & 33       & 14     & 30      & 22     & 17      & 30     & 12      \\
+7      & 8        & 15     & 5       & 23     & 7       & 31     & 4       \\
+8      & 23       & 16     & 24      & 24     & 10      & 32     & 18     
+\end{tabular}
+\\
+\vspace{0.3cm}
+N.U.N.C: Número de unidades no conformes con el estándar de especificación.
+\end{table}
+
+\noaddpoints
+
+\begin{parts}
+\part[10] Confeccione un diagrama de control para la proporción de artículos que no cumplen los estándares de especificación. Utilice una metodología 6-$\sigma$. Comente.
+\part[10] Se sabe que tras la llegada del veinteavo camión se cambió el material de producción utilizado en las unidades contenidas en el lote. El encargado de control de calidad desea investigar si el cambio de material afectó la proporción de unidades no conformes con el estándar de especificación. Utilizando la información disponible ¿Es posible aseverar con un $95\%$ de confianza que hubo un cambio significativo?.
+\part[10] Asuma que la proporción real de unidades no conformes con los estándares de especificación es $p=0.17$. ¿Qué tamaño de muestra mínimo es necesario para que la probabilidad de detectar un cambio de esta proporción a $p=0.25$ sea $50\%$?
+\part[10] Confecciones un diagrama de control para c (el número de unidades no conformes con los límites de especificación o defectuosos). Compare este diagrama con el diagrama de control para $p$. ¿Qué diferencia hay entre estos diagramas de control?. ¿Es posible describir un caso (no necesariemente en la muestra) en donde un mismo lote entrega un distintos estados de control en estos diagramas?.
+\end{parts}
+
+\begin{solution}
+\begin{enumerate}[a)]
+\item Los límites del diagrama de control estarán dados por:
+\begin{align*}
+UCL&=\overline{p}+3\sqrt{\dfrac{\overline{p}(1-\overline{p})}{n}}=0.2811093\\
+CL&=\overline{p}=0.16875\\
+LCL&=\overline{p}-3\sqrt{\dfrac{\overline{p}(1-\overline{p})}{n}}=0.05639071
+\end{align*}
+y el diagrama será:\\
+\begin{center}
+\includegraphics[scale=1]{1a.png} 
+\end{center}
+\item Se tiene el test de hipótesis:
+
+$$H_0: p_1 = p_2 \quad \quad H_1: p_1 \neq p_2$$
+
+donde $p_1$ y $p_2$ son las proporciones de unidades no conformes con los límites de especificación hasta el lote 20 y posterior a este, respectivamente. Se tiene que el estadístico de prueba es:
+
+$$Z_0=\dfrac{\hat{p}_1-\hat{p}_2}{\sqrt{\hat{p}(1-\hat{p})}\left(\dfrac{1}{n_1}+\dfrac{1}{n_2}\right)}$$
+donde $\hat{p}=\dfrac{n_1 \hat{p}_1+n_2 \hat{p}_2}{n_1+n_2}$. Así, $Z_0=0.6580902$, tras comparar con los cuantiles teórico se tiene que no rechazamos $H_0$.
+\item Se tiene que el tamaño de muestra mínimo pedido está dado por:
+
+$$n=\left(\dfrac{3}{0.25-0.17}\right)^2 0.17*(1-0.17)=198.4219 \approx 199$$
+
+\item El diagrama de control pedido tiene los siguientes límites de control:
+
+\begin{align*}
+UCL&=\overline{c}+3\sqrt{\overline{c}}=29.19876\\
+CL&=\overline{c}=16.875\\
+LCL&=\overline{c}-3\sqrt{\overline{c}}=4.551242
+\end{align*}
+
+\begin{center}
+\includegraphics[scale=1]{1d.png} 
+\end{center}
+\end{enumerate}
+\end{solution}
