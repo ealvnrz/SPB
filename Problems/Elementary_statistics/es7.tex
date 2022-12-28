@@ -1,0 +1,54 @@
+%@ Subject: Elementary Statistics
+
+\addpoints
+\question[12] Un comerciante lleva a cabo un estudio para determinar la relación entre los gastos semanales por publicidad y las ventas. Sean $X$ los costos de publicidad en unidades monetarias (u.m.) e $Y$ las ventas en u.m. Se registraron los siguientes datos:
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{rrrrrr}
+        $\mathrm{X}$ & $\mathrm{Y}$ & $X^2$ & $Y^2$ & $\mathrm{XY}$ & $Y-\overline{Y}$ \\
+        \hline 40 & 385 & 1600 & 148225 & 15400 & -68.7 \\
+        20 & 400 & 400 & 160000 & 8000 & -53.7 \\
+        25 & 395 & 625 & 156025 & 9875 & -58.7 \\
+        20 & 365 & 400 & 133225 & 7300 & -88.7 \\
+        30 & 475 & 900 & 225625 & 14250 & 21.2 \\
+        50 & 440 & 2500 & 193600 & 22000 & -13.7 \\
+        40 & 490 & 1600 & 240100 & 19600 & 36.3 \\
+        20 & 420 & 400 & 176400 & 8400 & -33.8 \\
+        50 & 560 & 2500 & 313600 & 28000 & 106.3 \\
+        40 & 525 & 1600 & 275625 & 21000 & 71.3 \\
+        25 & 480 & 625 & 230400 & 12000 & 26.3 \\
+        50 & 510 & 2500 & 260100 & 25500 & 56.3 \\
+        \hline
+    \end{tabular}
+\end{table}
+Utilizando los datos a disposición:
+\noaddpoints
+\begin{parts}
+    \part[4] Calcule los valores estimados de a y b del modelo $Y=a+bX$.
+    \part[4] Estime las ventas semanales cuando los costos de publicidad son \$20, \$40 y \$50.
+    \part[4] Obtenga el coeficiente de determinación $R^2$ e interprete los resultados obtenidos.
+\end{parts}
+
+\noaddpoints
+\begin{solution}
+    Calculando:
+    \begin{align*}
+        \hat{b}&=\dfrac{COV(X,Y)}{s_{2}^{2}}\\
+        &= \dfrac{\dfrac{1}{n}\sum x_i y_i - \overline{x}\overline{y}}{\dfrac{1}{n}\sum x_{i}{2}-\overline{x}^2}\\
+        &= \dfrac{\dfrac{1}{12}191325-15503.12}{\dfrac{1}{12}15650-1167.4}\\
+        &= \dfrac{440.63}{136.77} \\
+        &= 3.22
+    \end{align*}
+    Con esto el valor ajustado de a es:
+    \begin{align*}
+        \hat{a}&= \overline{y}-\hat{b}\overline{x}\\
+        &= \dfrac{1}{12}\sum y_i - 3.22 * \dfrac{1}{12}\sum x_i\\
+        &= \dfrac{1}{12} 5445 - 3.22 * \dfrac{1}{12} 410\\
+        &= 343.73            
+    \end{align*}
+    Por lo que el modelo resultantes es: $\hat{\text{venta}}=343.73+3.22 * \text{ costo }$.
+    Con el modelo obtenido se tiene que para un costo 20, la venta esperada es de 408.13; para un costo 40, una venta esperada de 472.53 y para un costo 50, una venta esperada de 504.73.
+    Finalmente, calculando el coeficiente de determinación como:
+    $$R^2=1-\dfrac{\sum (y_i -\hat{y})^2}{\sum (y_i - \overline{y})^2}=1-0.596=0.403$$   
+\end{solution}
+

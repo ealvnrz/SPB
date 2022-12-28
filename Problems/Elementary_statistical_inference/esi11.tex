@@ -1,0 +1,39 @@
+
+%@ Subject: Elementary Statistical Inference
+
+\addpoints
+
+\question[14] En una investigación se tiene por interés saber el grado de dureza Brinell de dos tipos de aleaciones de magnesio, para lo cual se toman muestras aleatorias, resultando para cada aleación las siguientes durezas de Brinell:
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{lllllllllll}
+    Aleación N°1 & 66.3 & 63.5 & 64.9 & 61.8 & 64.3 & 64.7 & 65.1 & 64.5 & 68.4 & 63.2 \\
+    Aleación N°2 & 71.3 & 60.4 & 62.6 & 63.9 & 68.8 & 70.1 & 64.8 & 68.9 & 65.8 & 66.2
+    \end{tabular}
+\end{table}
+
+Suponiendo que los distintos tipos de aleación de magnesio de la dureza de Brinell se distribuyen normal.
+
+\noaddpoints
+\begin{parts}
+    \part[4] Calcule el intervalo de confianza para la dureza media de Brinell en aleaciones de magnesio tipo 1, asuma que la varianza poblacional coincide con la varianza muestral. Use $\alpha=0.1$.
+    \part[4] Encuentre un intervalo de confianza para la proporción de aleaciones de magnesio tipo 1, que tienen una dureza de Brinell inferior a 64.8 con un 95\% de nivel de confianza.
+    \part[6] Determine el tamaño de muestra para estimar la proporción de aleaciones de magnesio tipo 2, con una dureza de Brinell inferior a 64.9, con un 95\% de confianza y un error de estimación inferior a 0.2.
+\end{parts}
+
+\begin{solution}
+    De la tabla entrega se obtiene: 
+    $$\overline{x}_1=64.67,\sigma_1=1.787,n_1=10,\alpha=0.1 \Rightarrow Z_{0.95}=1.645$$
+    Por lo que el intervalo está dado por:
+    $$\mu \in \left[ 63.7404 ; 65.5995 \right]$$
+    Luego, se tiene que $\hat{p}=\dfrac{6}{10}=0.6,\alpha=0.05\Rightarrow Z_{0.975}=1.96$. Así, el segundo intervalo pedido es:
+    $$p \in \left[ 0.2964 ; 0.9036 \right]$$
+    Finalmente, se tiene que $\hat{p}_2=0.4$, siguen entonces:
+    \begin{align*}
+        E = Z_{1-\alpha/2}\sqrt{\dfrac{\hat{p}_2 (1-\hat{p}_2}{n}} &\leq 0.2\\
+        1.96 \sqrt{\dfrac{0.4*0.6}{n}} &\leq 0.2\\
+        n &\geq \left(\dfrac{1.96}{0.2}\right)^2 * 0.6 * 0.4 \approx 24
+    \end{align*}
+Por lo que el tamaño de muestra pedido debe ser $n\geq 24$.
+\end{solution}

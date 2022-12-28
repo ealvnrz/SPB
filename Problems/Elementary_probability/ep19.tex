@@ -1,0 +1,68 @@
+%@ Subject: Elementary Probability
+
+\addpoints
+\question[12] En una determinada región la distribución de ingresos por familia en unididades monetarias (u.m.) es una variable aleatorio $X$ con función de densidad de probabilidad dada por:
+
+\begin{align*}
+    f(x)=\begin{cases}
+        \dfrac{x+1}{10}&, \text{ si } 0\leq x \leq 2\\
+        -\dfrac{3x}{40}+\dfrac{9}{20}&, \text{ si } 2 < x \leq 6\\
+        0&, \text{ en otro caso.}
+    \end{cases}
+\end{align*}
+
+\noaddpoints
+\begin{parts}
+    \part[4] Verifique que $f(x)$ es función de densidad.
+    \part[4] Determine la función de distribución acumulada de la variable aleatoria $X$.
+    \part[4] Suponga que se seleccionan 50 familias. Haciendo los supuestos que sean necesarios, determine la probabilidad de que al menos 3 tengan ingreso inferior a 1 u.m.
+\end{parts}
+\begin{solution}
+    Para mostrar que es función densidad debemos mostrar dos propiedades:
+\begin{itemize}
+    \item $f_X(x) \geq 0 \quad \forall x \in \mathbb{R}$
+Es claro que $f(x)=\frac{x+1}{10} \geq 0$, cuando $0 \leq x \leq 2$ y $f(x)=\frac{18-3 x}{40} \geq 0$ cuando $2<x \leq 6$
+    \item $\int f_X(x) \mathrm{d} x=1 \quad \forall x \in \mathbb{R}$.
+    \begin{align*}
+        \int_0^6 f_X(x) \mathrm{d} x & =\int_0^2 \frac{x+1}{10} \mathrm{~d} x+\int_2^6 \frac{18-3 x}{40} \mathrm{~d} x \\
+        & =\left.\left(\frac{x^2}{20}+\frac{x}{10}\right)\right|_{x=0} ^{x=2}+\left.\left(\frac{18 x}{40}-\frac{3 x^2}{80}\right)\right|_{x=2} ^{x=6} \\
+        & =\frac{4}{20}+\frac{2}{10}+\frac{18 \cdot 6}{40}-\frac{3 \cdot 18}{40}-\frac{2 \cdot 18}{40}+\frac{6}{40} \\
+        & =1
+    \end{align*}
+\end{itemize}
+
+Para encontrar la función de distribución acumulada de la variable aleatoria X, debemos proceder por tramos:
+\begin{itemize}
+    \item Si $0 \leq x \leq 2$
+    \begin{align*}
+        F(x) & =\frac{1}{10} \int_{u=0}^x(u+1) d u \\
+        & =\frac{1}{10}\left\{\frac{u^2}{2}+u\right\}_{u=0}^x \\
+        & =\frac{x^2}{20}+\frac{x}{10}
+    \end{align*}
+    \item Si $2<x \leq 6$
+    \begin{align*}
+        F(x) & =\frac{1}{10} \int_{u=0}^2(u+1) d u+\frac{1}{40} \int_{u=2}^x(-3 u+18) d u \\
+        & =F(2)+\frac{1}{40}\left\{-\frac{3 u^2}{2}+18 u\right\}_{u=2}^x \\
+        & =\frac{2}{5}-\frac{3 x^2}{80}+\frac{9 x}{20}-\frac{3}{4}
+    \end{align*}
+\end{itemize}
+Así, la función de distribución acumulada es:
+\begin{align*}
+    F_X(x)=\left\{\begin{aligned}
+        0, & \text { si } x<0 \\
+        \frac{x^2}{20}+\frac{x}{10}, & \text { si } 0 \leq x \leq 2 \\
+        -\frac{3 x^2}{80}+\frac{9 x}{20}-\frac{7}{20}, & \text { si } 2<x \leq 6 \\
+        1, & \text { si } x>6
+    \end{aligned}\right.
+\end{align*}
+Finalmente, sea $Z$ el número de familias que tienen ingreso inferior a 1 u.m. de un total de 50. Con esto, $Z\sim Bin(50,\mathbb{P}(X<1)$), donde:
+
+$$q=\mathbb{P}(X<1)=\dfrac{1}{20}+\dfrac{1}{10}=\dfrac{3}{20}=0.15$$
+
+Entonces,
+
+\begin{align*}
+    \mathbb{P}(Z\geq 3)&=1-\mathbb{P}(Z<3)\\
+    &= 1- \sum_{z=0}^{2}\binom{50}{z}q^z (1-q)^{50-z}
+\end{align*}
+\end{solution}

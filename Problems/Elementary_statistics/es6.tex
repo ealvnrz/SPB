@@ -1,0 +1,55 @@
+%@ Subject: Elementary Statistics
+
+\addpoints
+\question[12] 
+
+Los siguientes datos corresponden a las cantidades máximas de emisión diarias de óxido de azufre (en toneladas) registradas según planta de emisión, en cierta zona industrial:
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{c|c|c|c} 
+        Cantidad de óxido(ton.) & Planta A & Planta B & Planta C \\
+        \hline $05-10$ & 50 & 40 & 20 \\
+        $10-15$ & 30 & 30 & 40 \\
+        $15-20$ & 60 & 0 & 70 \\
+        $20-25$ & 20 & 10 & 15 \\
+        $25-30$ & 40 & 20 & 5
+        \end{tabular}
+\end{table}
+
+\noaddpoints
+
+\begin{parts}
+    \part[4] Indentifique y clasifique las variables en estudio.
+    \part[4] Entre las plantas B y C. ¿Cuál presenta mayor variabilidad relativa según la cantidad de óxido de azufre emitido?
+    \part[4] ¿Qué porcentaje de las emisiones producidas por la planta C, supera las 28 toneladas?
+\end{parts}
+
+\begin{solution}
+    Las variables en estudio son:
+    \begin{itemize}
+        \item Planta de emisión: Variable discreta en escala nominal
+        \item Cantidad de óxido en toneladas: Variable continua en escala de razón
+    \end{itemize} 
+Por tabla se tiene que para la media aritmética para las plantas B y C son:
+\begin{align*}
+    \overline{x}_B&=\dfrac{40*7.5+\dots+20*27.5}{100}=14.5\\
+    \overline{x}_C&=\dfrac{20*7.5+\dots+5*27.5}{100}=15.67\\
+\end{align*}
+Y sus varianzas respectivas están dadas por:
+\begin{align*}
+    S_{B}^{2}&=\dfrac{40*7.5^2+\dots+20*27.5^2}{100}-(14.5)^2=61\\
+    S_{C}^{2}&=\dfrac{20*7.5^2+\dots+5*27.5^2}{100}-(15.67)^2=22.37
+\end{align*}
+Luego, el coeficiente de variación por planta será:
+\begin{align*}
+    CV_B&=\dfrac{\sqrt{61}}{14.5}=0.5386\\
+    CV_C&=\dfrac{\sqrt{47.3941}}{15.67}=0.3
+\end{align*}
+Así, la planta B presenta mayor variabiidad segun la cantidad de óxido de azufre emitido con respecto a la planta C. Finalmente, se tiene:
+
+\begin{align*}
+    P_p&=L_{i-1}+\dfrac{\dfrac{p*n}{100}-N_{i-1}}{n_i}*a_i\\
+    28 &=25+\dfrac{\dfrac{p*150}{100}-145}{5}*5 \Rightarrow p=98.66\%
+\end{align*}
+Luego, $1-p=(100-98.66)\%=1.34$.
+\end{solution}
